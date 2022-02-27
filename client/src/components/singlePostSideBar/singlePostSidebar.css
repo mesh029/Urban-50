@@ -112,7 +112,7 @@
   grid-area: right;
 }
 
-@media only screen and (max-width: 1026px) {
+@media only screen and (max-width: 1367px) {
   .sidebar {
       display: none;
   }
