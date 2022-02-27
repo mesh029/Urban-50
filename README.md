@@ -5,9 +5,13 @@ A simple blog that touches on current trends in a variety of fields
 # Built with
 
 MONGODB - Database
+
 Express - NodeJS framework
+
 React - Frontend
+
 Nodejs - Backend(Use the latest LTS NodeJs version)
+
 
 # Setup
 
