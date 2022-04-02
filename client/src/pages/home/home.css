@@ -10,6 +10,7 @@ body {
     display: flex;
     flex: 1;
     margin-left: 182px;
+    height: auto;
     
 }
 

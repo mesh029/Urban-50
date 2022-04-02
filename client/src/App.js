@@ -1,8 +1,9 @@
+  
 import Home from "./pages/home/Home";
 import TopBar from "./components/topbar/TopBar";
-import LeftBar from "./components/leftbar/Leftbar"
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
+import Editor from "./pages/Editor/Editor"
 import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
@@ -15,7 +16,6 @@ function App() {
   return (
     <Router>
       <TopBar />
-      <LeftBar/>
       <Switch>
         <Route exact path="/">
           <Home />
@@ -24,6 +24,7 @@ function App() {
         <Route path="/login">{user ? <Home /> : <Login />}</Route>
         <Route path="/write">{user ? <Write /> : <Register />}</Route>
         <Route path="/settings">{user ? <Settings /> : <Register />}</Route>
+        <Route path="/editor" component={Editor} />
         <Route path="/post/:postId">
           <Single />
         </Route>

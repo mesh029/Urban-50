@@ -19,27 +19,13 @@ export default function TopBar() {
         <i className="topIcon fab fa-instagram-square"></i>
       </div>
       <div className="topCenter">
-        <ul className="topList">
+        <ul className="topList"> 
           <li className="topListItem">
             <Link className="link" to="/">
-              HOME
+              Urban50
             </Link>
           </li>
-          <li className="topListItem">
-            <Link className="link" to="/">
-              ABOUT
-            </Link>
-          </li>
-          <li className="topListItem">
-            <Link className="link" to="/">
-              MESHED
-            </Link>
-          </li>
-          <li className="topListItem">
-            <Link className="link" to="/write">
-              WRITE
-            </Link>
-          </li>
+     
           <li className="topListItem" onClick={handleLogout}>
             {user && "LOGOUT"}
           </li>

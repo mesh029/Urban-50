@@ -1,13 +1,17 @@
 import "./single.css";
+import LeftSideBar from "../../components/leftbar/Leftbar"
 
-import SinglePostSidebar from "../../components/singlePostSideBar/singlePostSideBar"
 import SinglePost from "../../components/singlePost/SinglePost";
 
 export default function Single() {
   return (
+    <>
+      <LeftSideBar/>
+
     <div className="single">
       <SinglePost/>
-      <SinglePostSidebar/>
     </div>
+    </>
+
   );
 }

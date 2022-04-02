@@ -21,6 +21,10 @@ export default function Post({ post }) {
         <span className="postDate">
           {new Date(post.createdAt).toDateString()}
         </span>
+        <span className="postAuthor">
+          {post.username}
+        </span>
+
       </div>
       <p className="postDesc">{post.desc}</p>
     </div>

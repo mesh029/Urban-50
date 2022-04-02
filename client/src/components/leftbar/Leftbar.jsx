@@ -16,11 +16,30 @@ export default function Sidebar() {
  // }, []);
   return (
     <div className="left">
-      <a href="#">Contact</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contacts</a>
-    </div>
+      <div className="menu">
+        <a href="#">
+        <Link className="link" to="/">Home</Link>
+        </a>
+        <a href="#">
+        <Link className="link" to="/write">Write</Link>
+        </a>
+      </div>
+
+      <div className="blogCategory">
+
+      <a href="#">
+        <Link className="link" to="/">Chess</Link>
+        </a>
+        <a href="#">
+        <Link className="link" to="/write">Basketball</Link>
+        </a>
+        <a href="/editor">
+        <Link className="link" to="/editor">Footbal</Link>
+        </a>
+
+      </div>
+
+      </div>
+
   );
 }

@@ -16,14 +16,45 @@ export default function Sidebar() {
   return (
     <div className="sidebar right">
       <div className="sidebarItem">
-        <span className="sidebarTitle">ABOUT mEsh</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate qui
-          necessitatibus nostrum illum reprehenderit.
-        </p>
+        <span className="sidebarTitle">Trends</span>
+        <ol className="sidebarList">
+          <li className="sidebarListIte">#meshackWinsTata </li>
+          <li className="sidebarListIte">#zadockTheChessChamp </li>
+          <li className="sidebarListIte">#maganaIsBack </li>
+         
+
+        </ol>
+       
       </div>
+
       <div className="sidebarItem">
-        <span className="sidebarTitle">CATEGORIES</span>
+        <span className="sidebarTitle">Events</span>
+        <div className="same">
+          <div className="views">
+            <h4>Completed</h4>
+          </div>
+
+          Name: Grand prix Arena
+          Date:
+          Participants:
+        </div>
+
+        <div className="same">
+          <div className="views">
+            <h4>Upcoming</h4>
+          </div>
+
+          Name: Capablanca tournament
+          Date: 
+          Participants:
+        </div>
+
+     
+     
+      </div>
+
+      <div className="sidebarItem">
+        <span className="sidebarTitle">Events</span>
         <ul className="sidebarList">
           {cats.map((c) => (
             <Link to={`/?cat=${c.name}`} className="link">
@@ -33,7 +64,7 @@ export default function Sidebar() {
         </ul>
       </div>
       <div className="sidebarItem">
-        <span className="sidebarTitle">FOLLOW US</span>
+        <span className="sidebarTitle">Follow us</span>
         <div className="sidebarSocial">
           <i className="sidebarIcon fab fa-facebook-square"></i>
           <i className="sidebarIcon fab fa-twitter-square"></i>

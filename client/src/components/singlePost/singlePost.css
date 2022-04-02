@@ -1,6 +1,7 @@
 .singlePost {
   flex: 9;
   margin-left: 182px;
+
 }
 
 .singlePostWrapper {
@@ -99,7 +100,7 @@
   margin-top: 20px;
 }
 
-@media only screen and (max-width: 1026px) {
+@media only screen and (max-width: 710px) {
   .singlePost {
       margin-left: 0px;
   }

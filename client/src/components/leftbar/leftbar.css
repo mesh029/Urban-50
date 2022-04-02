@@ -1,6 +1,7 @@
 .left {
     flex: 0 2 200px;
     position: fixed;
+    margin-top: 50px;
      width: 180px;
      height: 400px;
      overflow-x: hidden;
@@ -22,12 +23,16 @@
       color: #f1f1f1;
   }
 
+  .menu{
+    border-bottom: 1px solid gray;
+    margin: 10px;
+  }
 @media screen and (max-height: 450px) {
   .left {padding-top: 100px;}
   .left a {font-size: 18px;}
 }
 
-@media only screen and (max-width: 1026px) {
+@media only screen and (max-width: 700px) {
   .left {
       display: none;
   }

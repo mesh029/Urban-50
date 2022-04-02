@@ -97,9 +97,14 @@ export default function SinglePost() {
           <p className="singlePostDesc">{desc}</p>
         )}
         {updateMode && (
-          <button className="singlePostButton" onClick={handleUpdate}>
+          <>
+            <button className="singlePostButton" onClick={handleUpdate}>
             Update
-          </button>
+          </button>    
+          </>
+        
+
+          
         )}
       </div>
     </div>
