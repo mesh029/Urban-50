@@ -17,7 +17,7 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
 
 
 mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect("mongodb+srv://Blog:Moa0722438511@cluster0.deejc.mongodb.net/blog?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
