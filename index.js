@@ -10,9 +10,12 @@ const multer = require("multer");
 const path = require("path");
 const PORT = process.env.PORT || 5000
 
+var cors = require('cors')
+
 
 dotenv.config();
 app.use(express.json());
+app.use(cors())
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
 
