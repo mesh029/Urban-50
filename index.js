@@ -43,20 +43,20 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File has been uploaded");
 });
 
-app.use("/api/auth", authRoute);
-app.use("/api/users", userRoute);
-app.use("/api/posts", postRoute);
-app.use("/api/categories", categoryRoute);
+app.use("/auth", authRoute);
+app.use("/users", userRoute);
+app.use("/posts", postRoute);
+app.use("/categories", categoryRoute);
 
 //deployment
 
 __dirname = path.resolve()
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/client/build")));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "clent", "build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "cliet", "build", "index.html"));
   });
 }
 else{
@@ -64,7 +64,6 @@ else{
     console.log("API is running")
   })
 }
-
 
 //deployment
 
