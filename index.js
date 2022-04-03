@@ -48,12 +48,25 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
-app.use(express.static(path.resolve(__dirname, "./client/build")));
+//deployment
+
+__dirname = path.resolve()
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, "/client/build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "clent", "build", "index.html"));
+  });
+}
+else{
+  app.get("/", (req, res) =>{
+    console.log("API is running")
+  })
+}
 
 
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-});
+//deployment
 
 app.listen(PORT, () => {
   console.log("Backend is running.");
