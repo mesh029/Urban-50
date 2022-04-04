@@ -87,7 +87,7 @@
       margin: 0px 5px 40px 180px;
   }
   .postTitle{
-    font-weight: 900px;
+    margin-bottom: 20px;
   }
   .posttitle{
     height: 100px;
@@ -112,11 +112,13 @@
       width: 100%;
   }
   .postTitle{
-    font-size: 3vw;
+    font-size: 3vh;
   }
   .posttitle{
-    height: 5vw;
+    height: 5vh;
   }
 }
+
+
 
 
