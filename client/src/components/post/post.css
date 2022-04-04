@@ -75,7 +75,6 @@
   margin-bottom: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 20vh;
   
   display: -webkit-box;
   -webkit-line-clamp: 4;
