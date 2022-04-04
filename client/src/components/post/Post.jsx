@@ -5,9 +5,12 @@ export default function Post({ post }) {
   const PF = "https://wubbachess.herokuapp.com/images/";
   return (
     <div className="post">
+      <div className="posttitle">
+
       <Link to={`/post/${post._id}`} className="link">
           <span className="postTitle">{post.title}</span>
         </Link>
+      </div>
 
       {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}
       <div className="postInfo">
@@ -21,12 +24,17 @@ export default function Post({ post }) {
         <span className="postDate">
           {new Date(post.createdAt).toDateString()}
         </span>
-        <span className="postAuthor">
-          {post.username}
-        </span>
 
       </div>
+      <div>
       <p className="postDesc">{post.desc}</p>
+      </div>
+     
+      <span className="postAuthor">
+         _ {post.username}
+        </span>
+
+
     </div>
   );
 }

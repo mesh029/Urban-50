@@ -1,25 +1,36 @@
 .post {
-  width: 100%;
-      margin: 1rem;
+  width: 30vw;
+      margin: 2rem;
     cursor: pointer;
     border-bottom: 3px solid grey;
+    height: 700px;
+    padding: 5px;
+
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+    -moz-box-shadow: 3px 3px 6px rgba(0,0,0,0.4);
 }
+
 
 .postImg {
   width: 100%;
-  
   position: center;
   height: 300px;
   object-fit: cover;
-  border-radius: 2px;
 }
 
 .postInfo {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
+.postAuthor{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 12px;
+  font-style: italic;
+}
 .postCat {
   font-family: "Varela Round", sans-serif;
   font-size: 11px;
@@ -32,7 +43,7 @@
 
 .postTitle {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 30px;
+  font-size: 3vh;
   font-weight: 700;
   cursor: pointer;
   list-style: none;
@@ -40,6 +51,12 @@
   text-justify: newspaper;
   justify-items: center;
 }
+
+.posttitle{
+
+  height: 5vh;
+}
+
 
 .postDate {
   font-family: "Lora", serif;
@@ -54,9 +71,11 @@
   font-size: 14px;
   color: #444;
   line-height: 24px;
-  margin: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
+  height: 20vh;
   
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -68,6 +87,12 @@
       width: 100%;
       margin: 0px 5px 40px 180px;
   }
+  .postTitle{
+    font-weight: 900px;
+  }
+  .posttitle{
+    height: 100px;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -75,4 +100,24 @@
       width: 100%;
       margin: 0px 5px 40px 0px;
   }
+  .postTitle{
+    font-size: 4vw;
+  }
+  .posttitle{
+    height: 5vw;
+  }
 }
+
+@media only screen and (max-width: 1450px) {
+  .post {
+      width: 100%;
+  }
+  .postTitle{
+    font-size: 3vw;
+  }
+  .posttitle{
+    height: 5vw;
+  }
+}
+
+
