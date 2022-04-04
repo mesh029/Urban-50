@@ -32,10 +32,13 @@
 
 .postTitle {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 42px;
-  font-weight: 970;
+  font-size: 30px;
+  font-weight: 700;
   cursor: pointer;
   list-style: none;
+  text-align:center;
+  text-justify: newspaper;
+  justify-items: center;
 }
 
 .postDate {
