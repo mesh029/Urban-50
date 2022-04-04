@@ -70,7 +70,8 @@
   color: #666;
   font-size: 18px;
   line-height: 25px;
-  justify-content: center;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .singlePostDesc::first-letter {
