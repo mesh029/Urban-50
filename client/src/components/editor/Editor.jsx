@@ -22,7 +22,7 @@ class Editor extends Component {
     this.setState({
       loading: true
     })
-    const _url = process.env.NODE_ENV === 'production' ? "/api/" : "http://localhost:5000/api/"
+    const _url = process.env.NODE_ENV === 'production' ? "/api/" : "http://localhost:5000/"
     const formdata = new FormData()
     formdata.append('text', this.state.text)
     formdata.append('image', this.state.imgSrc)

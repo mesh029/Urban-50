@@ -39,7 +39,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
-app.post("/api/upload", upload.single("file"), (req, res) => {
+app.post("/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File has been uploaded");
 });
 
@@ -53,15 +53,11 @@ app.use("/categories", categoryRoute);
 __dirname = path.resolve()
 
 if (process.env.NODE_ENV === "production") {
-  try {
     app.use(express.static(path.join(__dirname, "/client/build")));
 
     app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+      res.sendFile(path.resolve(__dirname, "clint", "build", "index.html"));
     });
-  } catch (error) {
-    console.log(error)
-  }
 
 }
 else{
@@ -71,7 +67,7 @@ else{
   })
 }
 
-//deployment
+//
 
 app.listen(PORT, () => {
   console.log("Backend is running.");
