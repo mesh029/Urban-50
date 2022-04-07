@@ -1,9 +1,13 @@
-.header {
+.headi {
   margin-top: 60px;
   border-bottom: 1px solid grey;
-  margin: 20px;
+  margin-left: 182px;
+
 }
 
+.header{
+  border-bottom: 1px solid grey;
+}
 .headerTitles {
   display: flex;
   flex-direction: column;
@@ -29,4 +33,15 @@
     height: 450px;
     margin-top: 80px;
     object-fit: cover;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .post {
+      width: 100%;
+      margin-left: 0px;
+  }
+  .headi{
+    margin: 10px;
+  }
 }

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./leftbar.css";
 import { Context } from "../../context/Context";
+import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
   const [cats, setCats] = useState([]);
@@ -18,7 +19,8 @@ export default function Sidebar() {
     <div className="left">
       <div className="menu">
         <a href="#">
-        <Link className="link" to="/">Home</Link>
+        <NavLink className="link" className={isActive =>
+    "nav-link" + (!isActive ? " sekected" : "")} activeStyle={{color: 'red'}}  to="/home">Home</NavLink>
         </a>
         <a href="#">
         <Link className="link" to="/write">Write</Link>
@@ -31,7 +33,7 @@ export default function Sidebar() {
         <Link className="link" to="/">Chess</Link>
         </a>
         <a href="#">
-        <Link className="link" to="/write">Basketball</Link>
+        <NavLink className="link" activeStyle={{color:'red'}} to="/land">Basketball</NavLink>
         </a>
         <a href="/editor">
         <Link className="link" to="/editor">Footbal</Link>

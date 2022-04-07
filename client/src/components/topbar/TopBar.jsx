@@ -12,19 +12,16 @@ export default function TopBar() {
   };
   return (
     <div className="top header">
-      <div className="topLeft">
-        <i className="topIcon fab fa-facebook-square"></i>
-        <i className="topIcon fab fa-twitter-square"></i>
-        <i className="topIcon fab fa-pinterest-square"></i>
-        <i className="topIcon fab fa-instagram-square"></i>
-      </div>
-      <div className="topCenter">
-        <ul className="topList"> 
-          <li className="topListItem">
+    <div className="topLeft">
+      <li className="topListItem">
             <Link className="link" to="/">
               Urban50
             </Link>
           </li>
+     </div>
+      <div className="topCenter">
+        <ul className="topList"> 
+        <h5>menu</h5>
      
           <li className="topListItem" onClick={handleLogout}>
             {user && "LOGOUT"}
@@ -37,20 +34,19 @@ export default function TopBar() {
             <img className="topImg" src={PF+user.profilePic} alt="" />
           </Link>
         ) : (
-          <ul className="topList">
+          <ul className="topList ls">
             <li className="topListItem">
               <Link className="link" to="/login">
-                LOGIN
+                Login/Register
               </Link>
             </li>
-            <li className="topListItem">
+            <li className="topListItem ls">
               <Link className="link" to="/register">
-                REGISTER
+                
               </Link>
             </li>
           </ul>
         )}
-        <i className="topSearchIcon fas fa-search"></i>
       </div>
     </div>
   );
