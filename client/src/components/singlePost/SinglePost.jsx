@@ -94,7 +94,12 @@ export default function SinglePost() {
             onChange={(e) => setDesc(e.target.value)}
           />
         ) : (
-          <p className="singlePostDesc">{desc}</p>
+          <div className="singlePostDesc">
+            <mark-down>
+            {desc}
+            </mark-down>
+    
+            </div>
         )}
         {updateMode && (
           <>

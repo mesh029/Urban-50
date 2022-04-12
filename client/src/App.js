@@ -30,6 +30,7 @@ function App() {
         <Route path="/settings">{user ? <Settings /> : <Register />}</Route>
         <Route path="/land"><Land /></Route>
         <Route path="/home">{user ? <Home /> : <Home />}</Route>
+        <Route path="/editor"> <Editor /></Route>
 
         <Route path="/post/:postId">
           <Single />

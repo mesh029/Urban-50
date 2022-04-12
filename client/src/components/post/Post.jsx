@@ -1,17 +1,21 @@
 import "./post.css";
 import { Link } from "react-router-dom";
+import md from "../../md";
+import TextareaMarkdownEditor from 'react-textarea-markdown-editor';
 
 export default function Post({ post }) {
   const PF = "https://wubbachess.herokuapp.com/images/";
+
+  const postDesc = post.desc
   return (
     <div className="post">
       <div className="posttitle">
+
 
       <Link to={`/post/${post._id}`} className="link">
           <span className="postTitle">{post.title}</span>
         </Link>
       </div>
-
       {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}
       <div className="postInfo">
         <div className="postCats">
@@ -26,8 +30,11 @@ export default function Post({ post }) {
         </span>
 
       </div>
-      <div>
-      <p className="postDesc">{post.desc}</p>
+
+      <div className="postDesc">
+        <mark-down>
+          {post.desc}
+        </mark-down>
       </div>
      
       <span className="postAuthor">

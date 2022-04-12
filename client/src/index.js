@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { ContextProvider } from "./context/Context";
-import 'bootstrap/dist/css/bootstrap.css';
+import 'react-textarea-markdown-editor/build/TextareaMarkdownEditor.css';
 
 
 ReactDOM.render(

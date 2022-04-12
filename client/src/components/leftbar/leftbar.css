@@ -1,4 +1,4 @@
-.left {
+.leftb {
     flex: 0 2 200px;
     position: fixed;
     margin-top: 50px;
@@ -10,7 +10,7 @@
 
 
   }
-  .left a{
+  .leftb a{
       padding: 6px 8px 6px 10px;
       text-decoration: none;
       font-size: 19px;
@@ -19,7 +19,7 @@
    
   }
 
-  .left a:hover{
+  .leftb a:hover{
       color: #f1f1f1;
   }
 
@@ -28,8 +28,8 @@
     margin: 10px;
   }
 @media screen and (max-height: 450px) {
-  .left {padding-top: 100px;}
-  .left a {font-size: 18px;}
+  .leftb {padding-top: 100px;}
+  .leftb a {font-size: 18px;}
 }
 
 @media only screen and (max-width: 700px) {

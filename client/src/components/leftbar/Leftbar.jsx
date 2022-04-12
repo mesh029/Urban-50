@@ -16,7 +16,7 @@ export default function Sidebar() {
    // getCats();
  // }, []);
   return (
-    <div className="left">
+    <div className="leftb">
       <div className="menu">
         <a href="#">
         <NavLink className="link" className={isActive =>
@@ -30,7 +30,7 @@ export default function Sidebar() {
       <div className="blogCategory">
 
       <a href="#">
-        <Link className="link" to="/">Chess</Link>
+        <Link className="link" to="/editor">Chess</Link>
         </a>
         <a href="#">
         <NavLink className="link" activeStyle={{color:'red'}} to="/land">Basketball</NavLink>
