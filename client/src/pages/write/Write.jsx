@@ -1,41 +1,41 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useState } from "react";
+import ReactDOM from 'react-dom'
 import "./write.css";
+import MediumEditor, { getContent } from "medium-editor";
 import axios from "axios";
 import { Context } from "../../context/Context";
 import $ from 'jquery'
+import Editor from 'react-medium-editor'
+import './../../../node_modules/medium-editor/dist/css/medium-editor.css'
+import './../../../node_modules/medium-editor/dist/css/themes/default.css'
+import 'draft-js/dist/Draft.css'
+import 'draftail/dist/draftail.css'
+import EdiText from 'react-editext'
+import { DraftailEditor, BLOCK_TYPE, INLINE_STYLE } from "draftail"
+import e from "cors";
+
+
+const initial = JSON.parse(sessionStorage.getItem("draftail:content"))
 
 
 
-import { Icon } from 'semantic-ui-react';
-import getConfig from './../../CustomizedMarkdownEditor/config';
-import md from './../../md';
-import { useDropzone } from 'react-dropzone';
-import TextareaMarkdownEditor from 'react-textarea-markdown-editor';
-
-const value = `
-# react-textarea-markdown-editor
-A highly **customizable**, **light weight** *React* markdown editor which is
-* Based on pure textarea
-* Not bundled with any markdown parser. Free free to use [markdown-it](https://www.npmjs.com/package/markdown-it), [marked](https://www.npmjs.com/package/marked) or other markdown parsers.
-* Support dropping and pasting image by customization (Please check the example)
-* Customizable menu bar
-`;
-
-const languageOptions = [
-  { key: 'Chinese', text: '简体中文', value: 'zh' },
-  { key: 'English', text: 'English', value: 'en' },
-];
 
 
+require('medium-editor/dist/css/medium-editor.css')
+require('medium-editor/dist/css/themes/default.css')
 
-export default function Write(props) {
+export default function Write() {
   
+
+
+  const [text, setText]= useState("hello world, coding is no one's joke")
 
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [file, setFile] = useState(null);
   const { user } = useContext(Context);
 
+  var fieldValue = 'hello'
 
 
  
@@ -62,83 +62,6 @@ export default function Write(props) {
     } catch (err) {}
   };
 
-  /**customized editor */
-
-  const { language = 'en' } = props;
-
-  const [images, setImages] = useState([]);
-  const { getRootProps, getInputProps, open, isDragActive } = useDropzone({
-    // Disable click and keydown behavior
-    noClick: true,
-    noKeyboard: true,
-    multiple: false,
-    accept: 'image/jpeg, image/png',
-    onDropAccepted: async (files) => {
-      const data = await FileReader.readAsDataURL(files[0]);
-      editorRef.current.mark('![', `][image${images.length + 1}]`, 'alt text');
-      setImages([...images, data]);
-    },
-  });
-  const editorRef = useRef(null);
-
-  const markers = [
-    ...getConfig(language),
-    {
-      key: 'images',
-      markers: [
-        {
-          key: 'images',
-          markers: [
-            {
-              key: 'open',
-              name: <Icon name="image" fitted size="large" onClick={open}/>,
-              title: 'Open file',
-              type: 'component',
-            },
-            ...images.map((data, index) => ({
-              defaultText: 'alt text',
-              key: `image${index + 1}`,
-              name: `image${index + 1}`,
-              prefix: '![',
-              suffix: `][image${index + 1}]`,
-              title: `image${index + 1}`,
-              type: 'marker',
-            })),
-          ],
-          type: 'dropdown',
-        },
-      ],
-    },
-  ];
-
-  async function onPaste (e) {
-    if (!e.clipboardData) {
-      return;
-    }
-    const items = e.clipboardData.items;
-    if (!items) {
-      return;
-    }
-    for (let i = 0; i < items.length; i++) {
-      // Skip content if not image
-      if (items[i].type.indexOf('image') === -1) continue;
-      // Retrieve image on clipboard as blob
-      const file = items[i].getAsFile();
-      console.log(items[i]);
-      if (file) {
-        e.preventDefault();
-        e.stopPropagation();
-        // File name
-        console.log(e.clipboardData.getData('Text'));
-        const data = await FileReader.readAsDataURL(file);
-        console.log(data);
-        editorRef.current.mark('![', `][image${images.length + 1}]`, 'alt text');
-        setImages([...images, data]);
-      }
-    }
-  }
-  /**Customized editor */
-
 
   const onSave = (content) => {
     console.log("saving", content)
@@ -148,14 +71,29 @@ export default function Write(props) {
     setDesc.bind(content)
     console.log('what the fuck', JSON.stringify(desc))
   }
+  const editor = (
+    <DraftailEditor
+      rawContentState={initial || null}
+      onSave={onSave}
+      placeholder="Tell your freakin story..."
+      blockTypes={[
+        { type: BLOCK_TYPE.HEADER_THREE },
+        { type: BLOCK_TYPE.UNORDERED_LIST_ITEM },
+      ]}
+      inlineStyles={[{ type: INLINE_STYLE.BOLD }, { type: INLINE_STYLE.ITALIC }]}
+    />
+  )
 
+  //medium insert
 
+//
 return(
   
     <div className="write">
       <div className="hello">
 
       </div>
+      <div className="hello">{editor}</div>
       <div className="editor" >
       </div>
       {file && (
@@ -181,18 +119,30 @@ return(
             onChange={e=>setTitle(e.target.value)}
           />
         </div>
-        
         <div className="writeFormGroup">
-      <div {...getRootProps({ className: 'dropzone' })} className={isDragActive ? 'dropping' : ''}>
-        <input {...getInputProps()} />
-        <TextareaMarkdownEditor ref={editorRef} markers={markers} language={language} rows={10}
-                              placeholder="Tell your story..."
-                              doParse={text => md.render(`${text}\n\n${images.map((data, index) => `[image${index + 1}]: ${data}`).join('\n\n')}`, setDesc(`${text}\n\n${images.map((data, index) => `[image${index + 1}]: ${data}`).join('\n\n')}`))}
-                              onPaste={onPaste}
-                              onChange={console.log('hello world', desc)}/>
+          
 
-       </div>
-      </div>
+          <textarea
+            placeholder="Tell your story..."
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setDesc(e.target.value)}
+          >
+          </textarea>
+
+        </div>
+        <div className="writeFormGroup">
+        <DraftailEditor
+      rawContentState={initial || null}
+      onSave={console.log('shitty description',desc)}
+      placeholder="Tell your freakin story..."
+      blockTypes={[
+        { type: BLOCK_TYPE.HEADER_THREE },
+        { type: BLOCK_TYPE.UNORDERED_LIST_ITEM },
+      ]}
+      inlineStyles={[{ type: INLINE_STYLE.BOLD }, { type: INLINE_STYLE.ITALIC }]}
+    />
+        </div>
         
         <button className="writeSubmit" type="submit">
           Publish
