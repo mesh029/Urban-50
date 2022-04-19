@@ -10,9 +10,6 @@ import './../../../node_modules/medium-editor/dist/css/medium-editor.css'
 import './../../../node_modules/medium-editor/dist/css/themes/default.css'
 import 'draft-js/dist/Draft.css'
 import 'draftail/dist/draftail.css'
-import EdiText from 'react-editext'
-import { DraftailEditor, BLOCK_TYPE, INLINE_STYLE } from "draftail"
-import e from "cors";
 
 
 const initial = JSON.parse(sessionStorage.getItem("draftail:content"))
@@ -34,6 +31,7 @@ export default function Write() {
   const [desc, setDesc] = useState("");
   const [file, setFile] = useState(null);
   const { user } = useContext(Context);
+  const [content, setContent] = useState("")
 
   var fieldValue = 'hello'
 
@@ -45,6 +43,7 @@ export default function Write() {
       username: user.username,
       title,
       desc,
+      content,
     };
     if (file) {
       const data =new FormData();
@@ -62,38 +61,12 @@ export default function Write() {
     } catch (err) {}
   };
 
-
-  const onSave = (content) => {
-    console.log("saving", content)
-    sessionStorage.setItem("draftail:content", JSON.stringify(content))
-    setDesc(content)
-    console.log('description')
-    setDesc.bind(content)
-    console.log('what the fuck', JSON.stringify(desc))
-  }
-  const editor = (
-    <DraftailEditor
-      rawContentState={initial || null}
-      onSave={onSave}
-      placeholder="Tell your freakin story..."
-      blockTypes={[
-        { type: BLOCK_TYPE.HEADER_THREE },
-        { type: BLOCK_TYPE.UNORDERED_LIST_ITEM },
-      ]}
-      inlineStyles={[{ type: INLINE_STYLE.BOLD }, { type: INLINE_STYLE.ITALIC }]}
-    />
-  )
-
-  //medium insert
-
-//
 return(
   
     <div className="write">
       <div className="hello">
 
       </div>
-      <div className="hello">{editor}</div>
       <div className="editor" >
       </div>
       {file && (
@@ -125,6 +98,20 @@ return(
           <textarea
             placeholder="Tell your story..."
             type="text"
+            className="writeInput"
+            onChange={e=>setContent(e.target.value)}
+          >
+          </textarea>
+
+        </div>
+
+
+        <div className="writeFormGroup">
+          
+
+          <textarea
+            placeholder="Tell your story..."
+            type="text"
             className="writeInput writeText"
             onChange={e=>setDesc(e.target.value)}
           >
@@ -132,18 +119,7 @@ return(
 
         </div>
         <div className="writeFormGroup">
-        <DraftailEditor
-      rawContentState={initial || null}
-      onSave={console.log('shitty description',desc)}
-      placeholder="Tell your freakin story..."
-      blockTypes={[
-        { type: BLOCK_TYPE.HEADER_THREE },
-        { type: BLOCK_TYPE.UNORDERED_LIST_ITEM },
-      ]}
-      inlineStyles={[{ type: INLINE_STYLE.BOLD }, { type: INLINE_STYLE.ITALIC }]}
-    />
-        </div>
-        
+         </div>
         <button className="writeSubmit" type="submit">
           Publish
         </button>

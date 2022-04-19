@@ -12,6 +12,11 @@ const PostSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    content:{
+      type: String, 
+      required:false,
+
+    },
     photo: {
       type: String,
       required: false,

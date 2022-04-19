@@ -14,6 +14,7 @@ export default function SinglePost() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [updateMode, setUpdateMode] = useState(false);
+  const [content, setContent]  = useState("")
 
   useEffect(() => {
     const getPost = async () => {
@@ -21,6 +22,7 @@ export default function SinglePost() {
       setPost(res.data);
       setTitle(res.data.title);
       setDesc(res.data.desc);
+      setContent(res.data.content)
     };
     getPost();
   }, [path]);
@@ -98,6 +100,14 @@ export default function SinglePost() {
             <mark-down>
             {desc}
             </mark-down>
+
+            <div className="singlePostDesc">
+            <mark-down>
+              content goes here
+            {content}
+            </mark-down>
+    
+            </div>
     
             </div>
         )}
