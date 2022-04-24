@@ -4,8 +4,10 @@ import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./singlePost.css";
-
+import cors from 'cors'
 export default function SinglePost() {
+
+  
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
@@ -15,6 +17,8 @@ export default function SinglePost() {
   const [desc, setDesc] = useState("");
   const [updateMode, setUpdateMode] = useState(false);
   const [content, setContent]  = useState("")
+
+
 
   useEffect(() => {
     const getPost = async () => {
@@ -50,9 +54,13 @@ export default function SinglePost() {
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
-        {post.photo && (
+        {/**
+         * Anncient stuff I plan to bring back to life sometime soon
+         *         {post.photo && (
           <img src={PF + post.photo} alt="" className="singlePostImg" />
+          
         )}
+         */}
         {updateMode ? (
           <input
             type="text"
