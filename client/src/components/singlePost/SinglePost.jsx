@@ -137,7 +137,6 @@ export default function SinglePost() {
           <div className="singlePostDesc">
 
             <div className="singlePostDesc" dangerouslySetInnerHTML={createMarkup()}>
-
     
             </div>
     
