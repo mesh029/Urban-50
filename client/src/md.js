@@ -1,5 +1,5 @@
 
-const md = require('markdown-it')({}).use(require('markdown-it-video'),
+const md = require('markdown-it')({html: true}).use(require('markdown-it-video'),
   {
     youtube: { width: 640, height: 390 },
     vimeo: { width: 500, height: 281 },

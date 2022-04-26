@@ -7,14 +7,19 @@ import "./land.css";
 import axios from "axios";
 import { useLocation } from "react-router";
 
+var cors = require('cors')
 
+var corsOptions = {
+  origin: 'ttps://wubbachess.herokuapp.com',
+  optionsSuccessStatus: 200
+}
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const { search } = useLocation();
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get("https://wubbachess.herokuapp.com/posts" + search);
+      const res = await axios.get("/posts" + search);
       setPosts(res.data);
     };
     fetchPosts();

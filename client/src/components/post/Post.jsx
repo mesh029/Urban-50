@@ -2,6 +2,17 @@ import "./post.css";
 import { Link } from "react-router-dom";
 import md from "../../md";
 import TextareaMarkdownEditor from 'react-textarea-markdown-editor';
+import { Remarkable }from 'remarkable'
+import RemarkablePGN from 'remarkable-pgn'
+
+
+const remarkable = new Remarkable()
+
+
+remarkable.use(RemarkablePGN, {/**Options here */})
+
+
+
 
 export default function Post({ post }) {
   const PF = "https://wubbachess.herokuapp.com/images/";
@@ -16,7 +27,11 @@ export default function Post({ post }) {
           <span className="postTitle">{post.title}</span>
         </Link>
       </div>
-      {post.photo && <img className="postImg" src={PF + post.photo} alt=""  crossOrigin="anonymous"/>}
+      {/**
+       * 
+             {post.photo && <img className="postImg" src={PF + post.photo} alt=""/>}
+
+       */}
       <div className="postInfo">
         <div className="postCats">
           {post.categories.map((c) => (

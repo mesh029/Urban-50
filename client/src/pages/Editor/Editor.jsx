@@ -7,14 +7,17 @@ import getConfig from './../../CustomizedMarkdownEditor/config';
 import { Icon } from 'semantic-ui-react';
 
 
-
-
 import { Container, Tab, Dropdown, TextArea } from 'semantic-ui-react';
-import md from './../../md';
 import CustomizedMarkdownEditor from './../../CustomizedMarkdownEditor';
 import axios from "axios";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
+
+
+var MarkdownIt = require('markdown-it'),
+
+md = new MarkdownIt
+
 
 
 
@@ -27,6 +30,15 @@ A highly **customizable**, **light weight** *React* markdown editor which is
 * Support dropping and pasting image by customization (Please check the example)
 * Customizable menu bar
 `;
+
+
+
+var result = md.render(value)
+
+
+function createMarkup() {
+  return {__html:  `hello + ${result}`};
+}
 
 const languageOptions = [
   { key: 'Chinese', text: '简体中文', value: 'zh' },
@@ -193,6 +205,12 @@ function Editor (props) {
                               onChange={console.log('hello world', desc)}/>
 
        </div>
+
+       <div dangerouslySetInnerHTML={createMarkup()} ></div>
+
+
+
+
 
       </div>
       <button className="writeSubmit" type="submit">

@@ -4,7 +4,11 @@ import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./singlePost.css";
-import cors from 'cors'
+import markdownIt from 'markdown-it'
+import md from '../../md'
+
+
+
 export default function SinglePost() {
 
   
@@ -19,10 +23,26 @@ export default function SinglePost() {
   const [content, setContent]  = useState("")
 
 
+  var MarkdownIt = require('markdown-it')
+
+
+
+
+
+
+
+
+  var cors = require('cors')
+
+
+  var corsOptions = {
+    origin: 'ttps://wubbachess.herokuapp.com',
+    optionsSuccessStatus: 200
+  }
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("https://wubbachess.herokuapp.com/posts/" + path);
+      const res = await axios.get("/posts/" + path, cors(corsOptions));
       setPost(res.data);
       setTitle(res.data.title);
       setDesc(res.data.desc);
@@ -49,7 +69,16 @@ export default function SinglePost() {
       });
       setUpdateMode(false)
     } catch (err) {}
+
+
+    
   };
+
+  const result = md.render(desc)
+
+  function createMarkup() {
+    return {__html:  `${result}`};
+  }
 
   return (
     <div className="singlePost">
@@ -99,21 +128,16 @@ export default function SinglePost() {
         </div>
         {updateMode ? (
           <textarea
+          rows={30}
             className="singlePostDescInput"
             value={desc}
             onChange={(e) => setDesc(e.target.value)}
           />
         ) : (
           <div className="singlePostDesc">
-            <mark-down>
-            {desc}
-            </mark-down>
 
-            <div className="singlePostDesc">
-            <mark-down>
-              content goes here
-            {content}
-            </mark-down>
+            <div className="singlePostDesc" dangerouslySetInnerHTML={createMarkup()}>
+
     
             </div>
     

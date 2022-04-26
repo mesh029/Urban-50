@@ -3,12 +3,20 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./sidebar.css";
 
+var cors = require('cors')
+
+
+var corsOptions={
+  origin: 'https://wubbachess.herokuapp.com',
+  optionsSuccessStatus: 200,
+
+}
 export default function Sidebar() {
   const [cats, setCats] = useState([]);
 
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get("https://wubbachess.herokuapp.com/categories");
+      const res = await axios.get("/categories", cors(corsOptions));
       setCats(res.data);
     };
     getCats();

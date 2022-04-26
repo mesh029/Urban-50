@@ -32,6 +32,8 @@ function App() {
         <Route path="/home">{user ? <Home /> : <Home />}</Route>
         <Route path="/editor"> <Editor /></Route>
 
+        
+
         <Route path="/post/:postId">
           <Single />
         </Route>

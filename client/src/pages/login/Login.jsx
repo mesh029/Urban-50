@@ -11,16 +11,23 @@ export default function Login() {
   const { dispatch, isFetching } = useContext(Context);
   const [error, setError] = useState(false);
 
+  var cors = require('cors')
+
+  var corsOpations = {
+    origin: 'https://wubbachess.herokuapp.com',
+    optionsSuccessStatus: 200,
+
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(false)
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("https://wubbachess.herokuapp.com/auth/login", {
+      const res = await axios.post("/auth/login",{
         username: userRef.current.value,
         password: passwordRef.current.value,
-      });
+      }, cors(corsOpations));
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE" });
