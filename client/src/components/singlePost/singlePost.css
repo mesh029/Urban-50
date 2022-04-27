@@ -5,8 +5,8 @@
 }
 
 .singlePostWrapper {
-  padding: 20px;
-  padding-right: 0;
+  overflow: hidden;
+
   display: flex;
   flex-direction: column;
 }
