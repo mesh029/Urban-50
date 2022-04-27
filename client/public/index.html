@@ -82,18 +82,12 @@ $(function () {
     ct-pgn-viewer[className="chess"]{
       position: center;
       width: 100%;
-      object-fit: cover;
+      object-fit: contain;
       margin: 20px;
-  height: 300px;
   border-radius: 5px;
+  overflow: hidden;
     }
 
-    ct-pgn-viewer .ct-pgn-viewer-move-list-and-controls {
-
-height: 100px;
-width: 200px;
-position: center;
-}
 
 
     @media only screen and (max-width: 700px) {
@@ -102,6 +96,12 @@ position: center;
       width: 200%;
       object-fit: cover;
       height: 300px;
+
+      
+    }
+    ct-pgn-viewer .ct-pgn-viewer-move-list-and-controls {
+width: 400px;
+position: center;
     }
 }
 
