@@ -102,6 +102,14 @@
   margin-top: 20px;
 }
 
+ct-pgn-viewer.ct-pgn-viewer move-list .ct-move-list-container {
+  height: 100px;
+  position: center;
+}
+
+
+
+
 @media only screen and (max-width: 710px) {
   .singlePost {
       margin-left: 0px;

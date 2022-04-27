@@ -147,8 +147,11 @@ export default function SinglePost() {
             <button className="singlePostButton" onClick={handleUpdate}>
             Update
           </button>    
+
+          
           </>
         
+
 
           
         )}
