@@ -5,8 +5,8 @@
 }
 
 .singlePostWrapper {
-  overflow: hidden;
-
+  padding: 20px;
+  padding-right: 0;
   display: flex;
   flex-direction: column;
 }
@@ -101,14 +101,6 @@
   align-self: flex-end;
   margin-top: 20px;
 }
-
-ct-pgn-viewer.ct-pgn-viewer move-list .ct-move-list-container {
-  height: 100px;
-  position: center;
-}
-
-
-
 
 @media only screen and (max-width: 710px) {
   .singlePost {
