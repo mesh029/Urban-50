@@ -1,7 +1,6 @@
 .singlePost {
   flex: 9;
-  margin-left: 182px;
-  margin-right: 20px;
+  margin-left: 180px;
 }
 
 .singlePostWrapper {
@@ -72,6 +71,7 @@
   line-height: 25px;
   text-align: justify;
   text-justify: inter-word;
+  padding: 5px;
 }
 
 .singlePostDesc::first-letter {
