@@ -68,12 +68,13 @@ router.get("/:id", async (req, res) => {
 
 //GET ALL POSTS
 router.get("/", async (req, res) => {
-  const username = req.query.user;
-  const catName = req.query.cat;
+
   try {
     let cards;
 
       cards = await Card.find();
+
+      res.status(200).json(cards);
 
   } catch (err) {
     res.status(500).json(err);
