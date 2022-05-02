@@ -37,6 +37,10 @@ function App() {
         <Route path="/post/:postId">
           <Single />
         </Route>
+
+        <Route path="/card/:cardId">
+          <Land />
+        </Route>
       </Switch>
     </Router>
   );

@@ -32,6 +32,8 @@ export default function Write() {
   const [file, setFile] = useState(null);
   const { user } = useContext(Context);
   const [content, setContent] = useState("")
+  const [cardTitle, setCardTitle] = useState("not ready")
+  const [cardDesc, setCardDesc] = useState("")
 
   var fieldValue = 'hello'
 
@@ -59,6 +61,23 @@ export default function Write() {
       const res = await axios.post("/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {}
+  };
+
+  const handleSubmitb = async (e) => {
+    e.preventDefault();
+    const newCard = {
+      cardTitle,
+      cardDesc,
+    };
+    try {
+      const res = await axios.post("/cards", newCard);
+      window.location.replace("/card/" + res.data._id);
+
+    } catch (err) {
+
+      console.log(err.response.data)
+    }
+
   };
 
 return(
@@ -124,6 +143,33 @@ return(
           Publish
         </button>
       </form>
+
+      <div className="editor">
+      <form className="writeForm" onSubmit={handleSubmitb}>
+        <div className="writeFormGroup">
+          <input
+            type="text"
+            placeholder="CardTitle"
+            className="writeInput"
+            autoFocus={true}
+            onChange={e=>setCardTitle(e.target.value)}
+          />
+        </div>
+        <div className="writeFormGroup">
+          <textarea
+            placeholder="Set your card description..."
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setCardDesc(e.target.value)}
+          >
+          </textarea>
+
+        </div>
+        <button className="writeSubmit" type="submit">
+          Submitr
+        </button>
+      </form>
+      </div>
     </div>
   );
 
