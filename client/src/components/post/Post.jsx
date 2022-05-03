@@ -39,7 +39,6 @@ export default function Post({ post }) {
         <span className="postDate">
           {new Date(post.createdAt).toDateString()}
         </span>
-
       </div>
 
       <div className="postDesc">

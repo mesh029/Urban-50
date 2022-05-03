@@ -6,7 +6,7 @@ export default function Cards({ cards }) {
   return (
     <>
     
-<div className="posts">
+<div className="cards">
   {cards.map((p) => (
     <Card card={p} />
   ))}
