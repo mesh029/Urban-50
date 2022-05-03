@@ -28,6 +28,14 @@ export default function Post({ post }) {
              {post.photo && <img className="postImg" src={PF + post.photo} alt=""/>}
 
        */}
+
+
+      <div className="postDesc">
+        <mark-down>
+          {post.desc}
+        </mark-down>
+      </div>
+
       <div className="postInfo">
         <div className="postCats">
           {post.categories.map((c) => (
@@ -39,12 +47,6 @@ export default function Post({ post }) {
         <span className="postDate">
           {new Date(post.createdAt).toDateString()}
         </span>
-      </div>
-
-      <div className="postDesc">
-        <mark-down>
-          {post.desc}
-        </mark-down>
       </div>
      
       <span className="postAuthor">
