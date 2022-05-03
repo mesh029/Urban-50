@@ -12,6 +12,10 @@ const CardSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    cardCat: {
+      type: String,
+      required: false,
+    },
     photo: {
       type: String,
       required: false,

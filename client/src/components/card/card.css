@@ -1,0 +1,31 @@
+.card-icons{
+    color: orangered;
+}
+
+.cardIcn{
+    width: 100%;
+    text-align: center;
+}
+
+.cardDesc{
+    width: 100%;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: "Varela Round", sans-serif;
+    font-size: 14px;
+    color: #444;
+    line-height: 24px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.cardTitle{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin-bottom: 10px;
+}

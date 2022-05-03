@@ -34,6 +34,7 @@ export default function Write() {
   const [content, setContent] = useState("")
   const [cardTitle, setCardTitle] = useState("not ready")
   const [cardDesc, setCardDesc] = useState("")
+  const [cardCat, setCardCat] = useState("")
 
   var fieldValue = 'hello'
 
@@ -68,6 +69,7 @@ export default function Write() {
     const newCard = {
       cardTitle,
       cardDesc,
+      cardCat,
     };
     try {
       const res = await axios.post("/cards", newCard);
@@ -163,7 +165,15 @@ return(
             onChange={e=>setCardDesc(e.target.value)}
           >
           </textarea>
-
+        </div>
+        <div className="writeFormGroup">
+          <textarea
+            placeholder="Set your card category..."
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setCardCat(e.target.value)}
+          >
+          </textarea>
         </div>
         <button className="writeSubmit" type="submit">
           Submitr

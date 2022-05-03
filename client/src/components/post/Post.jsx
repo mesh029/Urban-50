@@ -16,13 +16,9 @@ remarkable.use(RemarkablePGN, {/**Options here */})
 
 export default function Post({ post }) {
   const PF = "https://wubbachess.herokuapp.com/images/";
-
-  const postDesc = post.desc
   return (
     <div className="post">
       <div className="posttitle">
-
-
       <Link to={`/post/${post._id}`} className="link">
           <span className="postTitle">{post.title}</span>
         </Link>
