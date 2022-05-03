@@ -13,26 +13,28 @@ export default function Card({ card }) {
     var icon
 
     if (category === 'chess') {
-      icon =         <i class="card-icons fa-solid fa-chess-knight fa-10x"></i>
+      icon =         <i class="fa-solid fa-chess-knight fa-10x"></i>
 
     }else if(category === 'basketball'){
-      icon =      <i class="card-icons fa-solid fa-chess-knight fa-8x"></i>
+      icon =      <i class="fa-solid fa-basketball fa-10x"></i>
 
-    }else{
-      icon =     <i class="card-icons fa-solid fa-chess-bishop"></i>
+    }else if(category === 'poetry'){
+      icon =     <i class="fa-solid fa-feather fa-10x"></i>
 
+    }else if(category === 'travel'){
+      icon = <i class="fa-solid fa-bus fa-10x"></i>
     }
 
     return (
      	// .. return
-  <Flippy
+  <Flippy className="flippy"
   flipOnHover={true} // default false
   flipOnClick={true} // default false
   flipDirection="horizontal" // horizontal or vertical
   //ref={(r) => this.flippy = r} // to use toggle method like this.flippy.toggle()
   // if you pass isFlipped prop component will be controlled component.
   // and other props, which will go to div
-  style={{ width: '300px', height: '600px', margin: '20px' }} /// these are optional style, it is not necessary
+ // style={{ width: '300px', height: '300px', margin: '20px' }} /// these are optional style, it is not necessary
 >
   <FrontSide
     style={{
@@ -53,24 +55,15 @@ export default function Card({ card }) {
 
       </div>
 
-      <div className="cardDesc">
-        {card.cardDesc}
-      </div>
-
     </div>
 
   </FrontSide>
   <BackSide
     style={{}}>
-    <p>
-        <a href="www.google.com">What I like</a>
-    </p>
 
-    <i class="card-icons fa-solid fa-chess-knight fa-10x"></i>
-
-    <br />
-
-    <i class="fa-solid fa-chess-bishop"></i>
+      <div className="cardDesc">
+        {card.cardDesc}
+      </div>
   </BackSide>
 </Flippy>
     );
