@@ -55,6 +55,10 @@ height: 20%;
   width: 100%;
 }
 
+.stat{
+  color: white;
+}
+
 .leftmosta{
   display: table-cell;
   vertical-align: middle;  

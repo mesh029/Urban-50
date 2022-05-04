@@ -42,6 +42,7 @@ export default function Card({ card }) {
 >
   <FrontSide
     style={{
+      background: '#2193b0', /* fallback for old browsers */
     }}
     className = "frontside"
   >

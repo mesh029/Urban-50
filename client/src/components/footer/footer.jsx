@@ -59,7 +59,7 @@ export default function Footer() {
       <a href="" className="footerList leftmosa">
       <h3>Urban50 cool stat</h3>
       </a>
-      <p>All rights reserverd, this is a funBoy blog. I enjoy writing about stuff I find cool. Enjoy!</p>
+      <p className="stat"> All rights reserverd, this is a funBoy blog. I enjoy writing about stuff I find cool. Enjoy!</p>
       </tr>
       <tr className="tBottom"></tr>
     </table>
