@@ -11,10 +11,14 @@ export default function Card({ card }) {
     var category = card.cardCat
 
     var icon
+    var link
 
     if (category === 'chess') {
       icon =         <i class="fa-solid fa-chess-knight fa-10x"></i>
+      link =          <Link className="link" to="/editor">Chess</Link>
 
+
+      
     }else if(category === 'basketball'){
       icon =      <i class="fa-solid fa-basketball fa-10x"></i>
 
@@ -38,9 +42,8 @@ export default function Card({ card }) {
 >
   <FrontSide
     style={{
-      backgroundColor: '#42a5f5',
-      
     }}
+    className = "frontside"
   >
     <div className="card">
       <div className="cardIcn">
@@ -64,6 +67,10 @@ export default function Card({ card }) {
       <div className="cardDesc">
         {card.cardDesc}
       </div>
+      <a href="#">
+        {link}
+      </a>
+      
   </BackSide>
 </Flippy>
     );

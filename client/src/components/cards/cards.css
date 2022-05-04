@@ -7,11 +7,12 @@ html, body{
   }
   
 .cards{
-
     display: flex;
     flex-wrap: wrap;
-    flex: 1 1 700px;
-    align-items: center;    
+    width: 100%;
 }
-
+/*
+.cards :nth-child(2n){
+}
+*/
 

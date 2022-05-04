@@ -6,6 +6,7 @@ import TopBar from "../../components/topbar/TopBar";
 import "./home.css";
 import axios from "axios";
 import { useLocation } from "react-router";
+import Header from "../../components/header/Header"
 
 var cors = require('cors')
 

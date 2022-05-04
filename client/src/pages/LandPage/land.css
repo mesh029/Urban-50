@@ -2,17 +2,59 @@ body {
     display: flex;
     min-height: 100vh;
     width: auto;
+    object-fit:contain;
 
   }
 
 
-.home{
+.land-sec{
     display: flex;
     flex: 1;
-    margin-left: 182px;
     height: auto;
     
+    
 }
+
+.land_tbl{
+  height: 100%;
+  width: 100%;
+
+}
+
+.land_rw{
+  height: 300px;
+  width: 100%;
+}
+.land_rw2{
+  height: 300px;
+  width: 100%;
+}
+
+
+
+.lft{
+  width: 5%;
+
+}
+.rght{
+  width: 5%;
+
+}
+.cntr{
+  width: 90%;
+
+}
+
+.cntr2{
+  background-color: white;
+  padding: 5px;
+
+}
+
+
+
+
+
 @media only screen and (max-width: 1026px) {
   .home {
       margin-left: 5px;

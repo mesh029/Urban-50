@@ -11,7 +11,7 @@ export default function TopBar() {
     dispatch({ type: "LOGOUT" });
   };
   return (
-    <div className="top header">
+    <div className="top">
     <div className="topLeft">
       <li className="topListItem">
             <Link className="link" to="/">
