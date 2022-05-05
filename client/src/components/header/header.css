@@ -46,9 +46,12 @@
 @media only screen and (max-width: 700px) {
   .posty {
       width: 100%;
-      margin-left: 0px;
+      margin-left: 3px;
   }
   .headi{
-    margin: 10px;
+    margin: 0px;
+  }
+  .headerTitleLg {
+    font-size: 70px;
   }
 }
