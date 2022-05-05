@@ -35,7 +35,16 @@
     height: 300px;
     margin: 15px;
     flex: 1 0 30%;
+    background-color: #13aacc;
     
+}
+
+.c-icon{
+    color: yellow;
+}
+
+.cardTitle{
+    color: white;
 }
 
 

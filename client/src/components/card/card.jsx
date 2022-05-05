@@ -14,19 +14,19 @@ export default function Card({ card }) {
     var link
 
     if (category === 'chess') {
-      icon =         <i class="fa-solid fa-chess-knight fa-10x"></i>
+      icon =         <i class="c-icon fa-solid fa-chess-knight fa-10x"></i>
       link =          <Link className="link" to="/editor">Chess</Link>
 
 
       
     }else if(category === 'basketball'){
-      icon =      <i class="fa-solid fa-basketball fa-10x"></i>
+      icon =      <i class="c-icon fa-solid fa-basketball fa-10x"></i>
 
     }else if(category === 'poetry'){
-      icon =     <i class="fa-solid fa-feather fa-10x"></i>
+      icon =     <i class="c-icon fa-solid fa-feather fa-10x"></i>
 
     }else if(category === 'travel'){
-      icon = <i class="fa-solid fa-bus fa-10x"></i>
+      icon = <i class="c-icon fa-solid fa-bus fa-10x"></i>
     }
 
     return (
@@ -42,7 +42,7 @@ export default function Card({ card }) {
 >
   <FrontSide
     style={{
-      background: '#2193b0', /* fallback for old browsers */
+       /* fallback for old browsers */
     }}
     className = "frontside"
   >

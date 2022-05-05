@@ -51,12 +51,56 @@ body {
 
 }
 
+.latestTitle{
+  margin-left: 30px;
+  border-bottom: 1px solid #0090b1;
+  width: 70%;
+  font-family: fantasy;
+}
 
 
+.latestTitle::first-letter {
+  font-size: 30px;
+  font-weight: 600;
+  color: #0090b1;
+}
 
+.info > h1{
+  border-bottom: 1px solid #0090b1;
+  width: 70%;
+  font-family: fantasy;
+}
+
+.info > h1::first-letter{
+  font-size: 30px;
+  font-weight: 600;
+  color: #0090b1;
+
+}
+.postsAndTab{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  float: left;
+}
+
+.tab{
+  width: 20%;
+}
+
+.posts{
+  width: 80%;
+
+}
 
 @media only screen and (max-width: 1026px) {
   .home {
       margin-left: 5px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .tab{
+    display: none;
   }
 }

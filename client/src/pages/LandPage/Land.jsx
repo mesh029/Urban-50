@@ -3,6 +3,7 @@ import Header from "../../components/header/Header";
 import Posts from "../../components/posts/Posts";
 import Cards from "../../components/cards/Cards";
 import Footer from "../../components/footer/footer"
+import Postpro from "../../components/post/Postpro"
 
 import Sidebar from "../../components/sidebar/Sidebar";
 import LeftBar from "../../components/leftbar/Leftbar";
@@ -12,7 +13,7 @@ import { useLocation } from "react-router";
 
 var cors = require('cors')
 
-var text = "# About me \n I am a chess enthusiasts who enjoys:\n * Travelling\n * Basketball\n * Poetry\n \n In this blog I seek to bring together the trendiest stuff in regards to what I love, together with some of my friends to keep you entertained.\n  brace yourself!\n \n This is \n## Urban 50!"
+var text = "#### I am a chess enthusiast who enjoys:\n \n>*Travelling*\n \n>*Basketballn*\n \n *>Poetry*\n \n##### In this blog I seek to bring together the trendiest stuff in regards to what I love, together with some of my friends, to keep you entertained.\n ##### Brace yourself!\n #### This is... \n## Urban 50!"
 
 
 
@@ -49,6 +50,7 @@ export default function Home() {
             <td className="lft2"></td>
             <td className="cntr2">
               <div className="info">
+                <h1>About me(shack):)</h1>
                 <mark-down>
                   {text}
                 </mark-down>
@@ -58,6 +60,21 @@ export default function Home() {
           </tr>
         </table>
       </div> 
+      <br />
+      <br />
+      <div className="latestPosts">
+      <h1 className="latestTitle">Latest on Urban50</h1>
+      <div className="postsAndTab">
+      <div className="tab"></div>
+      <div className="posts">
+      <Postpro/>
+      <Postpro/>
+
+      </div>
+      </div>
+
+      </div>
+
       <Footer/>
     </>
   );
