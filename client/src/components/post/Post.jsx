@@ -53,6 +53,9 @@ export default function Post({ post }) {
          _ {post.username}
         </span>
 
+      <Link className="link" to="/land">Land</Link>
+
+
 
     </div>
   );

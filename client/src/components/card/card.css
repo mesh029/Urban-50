@@ -34,9 +34,7 @@
 .flippy{
     height: 300px;
     margin: 15px;
-    flex: 1 0 30%;
-    background-color: #13aacc;
-    
+    flex: 1 0 30%;    
 }
 
 .c-icon{

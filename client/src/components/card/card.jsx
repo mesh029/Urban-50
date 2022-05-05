@@ -21,12 +21,18 @@ export default function Card({ card }) {
       
     }else if(category === 'basketball'){
       icon =      <i class="c-icon fa-solid fa-basketball fa-10x"></i>
+      link =          <Link className="link" to="/write">Basketball</Link>
+
 
     }else if(category === 'poetry'){
       icon =     <i class="c-icon fa-solid fa-feather fa-10x"></i>
+      link =          <Link className="link" to="/home">Poetry</Link>
+
 
     }else if(category === 'travel'){
       icon = <i class="c-icon fa-solid fa-bus fa-10x"></i>
+      link =          <Link className="link" to="/editor">Chess</Link>
+
     }
 
     return (
@@ -43,6 +49,8 @@ export default function Card({ card }) {
   <FrontSide
     style={{
        /* fallback for old browsers */
+       background: '#13aaccc7'
+
     }}
     className = "frontside"
   >

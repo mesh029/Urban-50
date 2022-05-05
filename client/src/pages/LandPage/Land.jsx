@@ -65,7 +65,23 @@ export default function Home() {
       <div className="latestPosts">
       <h1 className="latestTitle">Latest on Urban50</h1>
       <div className="postsAndTab">
-      <div className="tab"></div>
+      <div className="tab">
+        <div className="tabQuote">
+          <h2 className="topQuoteTitle">Week's quote</h2>
+          <i class="q-icon fa-solid fa-quote-left fa-3x"></i>
+          <div className="topQuoteDescDiv">
+            <br />
+          <h3 className="topQuoteDesc">
+          There is no remorse like the remorse of chess.
+          </h3>
+          <br />
+          </div>
+          <div className="d">
+          <i class="q-icon-d fa-solid fa-quote-right fa-3x"></i>
+          <h3>– H. G. Wells</h3>
+          </div>
+        </div>
+      </div>
       <div className="posts">
       <Postpro/>
       <Postpro/>

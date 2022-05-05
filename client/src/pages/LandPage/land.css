@@ -71,6 +71,43 @@ body {
   font-family: fantasy;
 }
 
+.tabQuote{
+  margin-left: 20px;
+
+}
+
+.tabQuote > h2{
+  width: 70%;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
+.topQuoteTitle::first-letter{
+  font-size: 30px;
+  font-weight: 600;
+  color: #0090b1;
+}
+.q-icon{
+  color:#0090b1;
+}
+.q-icon-d{
+  color: #0090b1;
+  
+}
+
+.d{
+  width: 100%;
+  text-align: right;
+}
+.topQuoteDescDiv{
+  width: 100%;
+  align-content: center;
+  padding: 20px;
+}
+.topQuoteDesc::first-letter{
+  font-size: 30px;
+  font-weight: 600;
+  color: #0090b1;
+}
 .info > h1::first-letter{
   font-size: 30px;
   font-weight: 600;
@@ -83,6 +120,7 @@ body {
   flex-direction: row;
   float: left;
 }
+
 
 .tab{
   width: 20%;
