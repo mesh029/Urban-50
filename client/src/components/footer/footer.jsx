@@ -26,7 +26,8 @@ export default function Footer() {
       </tr>
     </table>
      </div>
-      <div className="footer-div">
+     <div className="info-stat">
+     <div className="footer-div social">
       <table className="tblFoot">
       <tr className="tTop"></tr>
       <tr className="tCenter2">
@@ -36,35 +37,30 @@ export default function Footer() {
         <li><a href="" className="footerList">Twitter</a></li>
         <li><a href="" className="footerList">Facebook</a></li>
         <li><a href="" className="footerList">Instagram</a></li>
-
       </ul>
-
-      <h3>Contact me</h3>
-      <ul className="footerList">
-        <li><a href="" className="footerList">Twitter</a></li>
-        <li><a href="" className="footerList">Facebook</a></li>
-        <li><a href="" className="footerList">Instagram</a></li>
-      </ul>
-
       </a>
       </tr>
       <tr className="tBottom"></tr>
     </table>
       </div>
 
-      <div className="footer-div ">
+      <div className="stat-div">
       <table className="tblFoot">
       <tr className="tTop"></tr>
       <tr className="tCenterl">
       <a href="" className="footerList leftmosa">
       <h3>Urban50 cool stat</h3>
       </a>
+      <br />
+      <div className="stat-p">
       <p className="stat"> All rights reserverd, this is a funBoy blog. I enjoy writing about stuff I find cool. Enjoy!</p>
+      </div>
       </tr>
       <tr className="tBottom"></tr>
     </table>
       </div>
-
+     </div>
+  
     </div>
   );
 }
