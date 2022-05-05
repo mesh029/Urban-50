@@ -2,14 +2,14 @@ import "./post.css";
 import { Link } from "react-router-dom";
 import md from "../../md";
 import TextareaMarkdownEditor from 'react-textarea-markdown-editor';
-import { Remarkable }from 'remarkable'
+import { Remarkable } from 'remarkable'
 import RemarkablePGN from 'remarkable-pgn'
 
 
 const remarkable = new Remarkable()
 
 
-remarkable.use(RemarkablePGN, {/**Options here */})
+remarkable.use(RemarkablePGN, {/**Options here */ })
 
 
 
@@ -19,7 +19,7 @@ export default function Post({ post }) {
   return (
     <div className="post">
       <div className="posttitle">
-      <Link to={`/post/${post._id}`} className="link">
+        <Link to={`/post/${post._id}`} className="link">
           <span className="postTitle">{post.title}</span>
         </Link>
       </div>
@@ -42,16 +42,16 @@ export default function Post({ post }) {
             <span className="postCat">{c.name}</span>
           ))}
         </div>
-        
+
         <hr />
         <span className="postDate">
           {new Date(post.createdAt).toDateString()}
         </span>
       </div>
-     
+
       <span className="postAuthor">
-         _ {post.username}
-        </span>
+        _ {post.username}
+      </span>
 
       <Link className="link" to="/land">Land</Link>
 

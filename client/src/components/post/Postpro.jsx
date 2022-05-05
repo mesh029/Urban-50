@@ -19,7 +19,7 @@ export default function Postpro({ post }) {
   return (
     <div className="postPro">
       <div className="posttitle">
-        <h1>Hello world</h1>
+        <h2>Hello world</h2>
       </div>
       {/**
        * 

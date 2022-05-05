@@ -63,7 +63,7 @@ export default function Home() {
       <br />
       <br />
       <div className="latestPosts">
-      <h1 className="latestTitle">Latest on Urban50</h1>
+      <h2 className="latestTitle">Latest on Urban50</h2>
       <div className="postsAndTab">
       <div className="tab">
         <div className="tabQuote">

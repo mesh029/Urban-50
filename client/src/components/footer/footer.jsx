@@ -60,14 +60,14 @@ export default function Footer() {
         </div>
       </div>
       <div className="futfooter-div">
-            <div className="tCenter3">
-              <ul className="futfooterList fut">
-                  <li><a href="" className="futfooterList">Twitter</a></li>
-                  <li><a href="" className="futfooterList">Facebook</a></li>
-                  <li><a href="" className="futfooterList">Instagram</a></li>
-                </ul>
-=            </div>
+        <div className="tCenter3">
+          <ul className="futfooterList fut">
+            <li><a href="" className="futfooterList">Twitter</a></li>
+            <li><a href="" className="futfooterList">Facebook</a></li>
+            <li><a href="" className="futfooterList">Instagram</a></li>
+          </ul>
         </div>
+      </div>
     </div>
   );
 }
