@@ -36,62 +36,61 @@ export default function Home() {
   }, [search]);
   return (
     <>
-        <Header className="header"/>     
+      <Header className="header" />
       <div class="land-sec">
         <table className="land_tbl">
           <tr className="land_rw">
-            <td className="lft"></td>
             <td className="cntr">
-            <Cards cards={cards} />
+              <Cards cards={cards} />
             </td>
-            <td className="rght"></td>
-          </tr>
-          <tr className="land_rw2">
-            <td className="lft2"></td>
-            <td className="cntr2">
-              <div className="info">
-                <h1>About me(shack):)</h1>
-                <mark-down>
-                  {text}
-                </mark-down>
-              </div>
-            </td>
-            <td className="rght2"></td>
           </tr>
         </table>
-      </div> 
-      <br />
+      </div>
+      <div className="info">
+        <h2>About me(shack):)</h2>
+        <br />
+        <h4>I am a chess enthusiast who enjoys:</h4>
+        <ul>
+          <li>Chess</li>
+          <li>Basketballn</li>
+          <li>Travelling</li>
+          <li>Poetry</li>
+        </ul>
+        <h4> In this blog I seek to bring together the trendiest stuff in regards to what I love, together with some of my friends, to keep you entertained.</h4>
+        <h4>Brace yourself! This is...</h4>
+        <h3>Urban 50!</h3>
+      </div>
       <br />
       <div className="latestPosts">
-      <h2 className="latestTitle">Latest on Urban50</h2>
-      <div className="postsAndTab">
-      <div className="tab">
-        <div className="tabQuote">
-          <h2 className="topQuoteTitle">Week's quote</h2>
-          <i class="q-icon fa-solid fa-quote-left fa-3x"></i>
-          <div className="topQuoteDescDiv">
-            <br />
-          <h3 className="topQuoteDesc">
-          There is no remorse like the remorse of chess.
-          </h3>
-          <br />
+        <h2 className="latestTitle">Latest on Urban50</h2>
+        <div className="postsAndTab">
+          <div className="tab">
+            <div className="tabQuote">
+              <h2 className="topQuoteTitle">Week's quote</h2>
+              <i class="q-icon fa-solid fa-quote-left fa-3x"></i>
+              <div className="topQuoteDescDiv">
+                <br />
+                <h3 className="topQuoteDesc">
+                  There is no remorse like the remorse of chess.
+                </h3>
+                <br />
+              </div>
+              <div className="d">
+                <i class="q-icon-d fa-solid fa-quote-right fa-3x"></i>
+                <h3>– H. G. Wells</h3>
+              </div>
+            </div>
           </div>
-          <div className="d">
-          <i class="q-icon-d fa-solid fa-quote-right fa-3x"></i>
-          <h3>– H. G. Wells</h3>
+          <div className="posts">
+            <Postpro />
+            <Postpro />
+
           </div>
         </div>
-      </div>
-      <div className="posts">
-      <Postpro/>
-      <Postpro/>
-
-      </div>
-      </div>
 
       </div>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }

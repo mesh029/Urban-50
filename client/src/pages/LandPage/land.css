@@ -41,7 +41,7 @@ body {
 
 }
 .cntr{
-  width: 90%;
+  width: 100%;
 
 }
 
@@ -63,6 +63,11 @@ body {
   font-size: 30px;
   font-weight: 600;
   color: #0090b1;
+}
+
+.info{
+  padding: 30px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .info > h2{
@@ -140,5 +145,15 @@ body {
 @media only screen and (max-width: 700px) {
   .tab{
     display: none;
+  }
+
+  .lft{
+    display: none;
+  }
+  .rght{
+    display: none;
+  }
+  .cntr{
+    width: 100%;
   }
 }
