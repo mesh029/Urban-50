@@ -21,7 +21,7 @@ function App() {
       <TopBar />
       <Switch>
         <Route exact path="/">
-        <Redirect exact from="/" to="/home" />
+        <Redirect exact from="/" to="/land" />
           <Home />
         </Route>
         <Route path="/register">{user ? <Home /> : <Register />}</Route>

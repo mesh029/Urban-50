@@ -73,7 +73,7 @@ body {
 .info > h2{
   border-bottom: 1px solid #0090b1;
   width: 70%;
-  font-family: fantasy;
+  font-family:'Courier New', Courier, monospace;
 }
 
 .tabQuote{
