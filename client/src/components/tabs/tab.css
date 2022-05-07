@@ -1,0 +1,28 @@
+.chessPg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+
+.ui.tabular.menu .item{
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+.ui.attached.tabular.menu {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+
+  .ui.tab.active, .ui.tab.open {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  
+  

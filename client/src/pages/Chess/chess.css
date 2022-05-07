@@ -1,0 +1,30 @@
+.chessPg {
+  width: 100%;
+}
+
+.chessPgUp{
+  height: 50%;
+  width: 100%;
+}
+
+.chessPgDwn{
+  height: 50%;
+
+}
+
+.ui.tabular.menu .item{
+  font-size: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.ui.attached.tabular.menu {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+
+}
+
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}

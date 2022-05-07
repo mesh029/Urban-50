@@ -5,7 +5,7 @@ import LeftBar from "./components/leftbar/Leftbar"
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
 import Land from "./pages/LandPage/Land"
-import Editor from "./pages/Editor/Editor"
+import Chess from "./pages/Chess/Chess"
 import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
@@ -21,7 +21,7 @@ function App() {
       <TopBar />
       <Switch>
         <Route exact path="/">
-        <Redirect exact from="/" to="/land" />
+        <Redirect exact from="/" to="/editor" />
           <Home />
         </Route>
         <Route path="/register">{user ? <Home /> : <Register />}</Route>
@@ -30,7 +30,7 @@ function App() {
         <Route path="/settings">{user ? <Settings /> : <Register />}</Route>
         <Route path="/land"><Land /></Route>
         <Route path="/home">{user ? <Home /> : <Home />}</Route>
-        <Route path="/editor"> <Editor /></Route>
+        <Route path="/editor"> <Chess /></Route>
 
         
 
