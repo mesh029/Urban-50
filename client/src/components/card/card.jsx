@@ -15,7 +15,7 @@ export default function Card({ card }) {
 
   if (category === 'chess') {
     icon = <i class="c-icon fa-solid fa-chess-knight fa-3x"></i>
-    link = <Link className="link" to="/editor">Chess</Link>
+    link = <Link className="link" to="/chess">Chess</Link>
 
 
 

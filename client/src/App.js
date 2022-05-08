@@ -21,7 +21,7 @@ function App() {
       <TopBar />
       <Switch>
         <Route exact path="/">
-        <Redirect exact from="/" to="/editor" />
+        <Redirect exact from="/" to="/land" />
           <Home />
         </Route>
         <Route path="/register">{user ? <Home /> : <Register />}</Route>
@@ -30,7 +30,8 @@ function App() {
         <Route path="/settings">{user ? <Settings /> : <Register />}</Route>
         <Route path="/land"><Land /></Route>
         <Route path="/home">{user ? <Home /> : <Home />}</Route>
-        <Route path="/editor"> <Chess /></Route>
+        <Route path="/chess"> <Chess /></Route>
+    
 
         
 
