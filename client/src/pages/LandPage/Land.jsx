@@ -36,7 +36,7 @@ export default function Home() {
       setCards(res.data);
     };
     const fetchPosts = async () => {
-      const res = await axios.get("/posts/" + search, cors(corsOptions));
+      const res = await axios.get(`/posts/?page=${"land"}` + search, cors(corsOptions));
       setPosts(res.data);
     };
     fetchPosts({category: "chess"});

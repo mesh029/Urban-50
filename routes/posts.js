@@ -72,6 +72,7 @@ router.get("/", async (req, res) => {
   const username = req.query.user;
   const catName = req.query.cat;
   const catg = req.query.cat2;
+  const pageName = req.query.page;
   try {
     let posts;
     if (username) {
@@ -83,8 +84,10 @@ router.get("/", async (req, res) => {
         },
       });
     }else if(catg){
-      posts = await Post.find({category:catg})
+      posts = await Post.find({category:catg}).sort({$natural: -1})
 
+    }else if(pageName === "land"){
+      posts = posts = await Post.find().limit(4).sort({$natural: -1});
     } else {
       posts = await Post.find().sort({$natural: -1});
     }
