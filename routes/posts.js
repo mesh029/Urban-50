@@ -86,7 +86,7 @@ router.get("/", async (req, res) => {
       posts = await Post.find({category:catg})
 
     } else {
-      posts = await Post.find();
+      posts = await Post.find().sort({$natural: -1});
     }
     res.status(200).json(posts);
   } catch (err) {
