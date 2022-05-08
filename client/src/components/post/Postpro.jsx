@@ -38,6 +38,7 @@ export default function Postpro({ post }) {
 
       <div className="postInfo">
       {new Date(post.createdAt).toDateString()}
+
       </div>
      
       <span className="postAuthor">

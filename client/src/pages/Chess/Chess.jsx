@@ -26,13 +26,13 @@ var corsOptions = {
 export default function TabExampleBasic(){
   const [posts, setPosts] = useState([]);
   const { search } = useLocation();
-
+var chess = "chess"
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get("/posts/" + search, cors(corsOptions));
+      const res = await axios.get(`/posts/?cat2=${"chess"}` + search, cors(corsOptions));
       setPosts(res.data);
     };
-    fetchPosts({category: "chess"});
+    fetchPosts();
   }, [search]);
 
   const chessEvents = (

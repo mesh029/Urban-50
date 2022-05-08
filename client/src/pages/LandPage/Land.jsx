@@ -4,6 +4,7 @@ import Posts from "../../components/posts/Posts";
 import Cards from "../../components/cards/Cards";
 import Footer from "../../components/footer/footer"
 import Postpro from "../../components/post/Postpro"
+import Postprs from "../../components/Postpros/Postprs"
 
 import Sidebar from "../../components/sidebar/Sidebar";
 import LeftBar from "../../components/leftbar/Leftbar";
@@ -24,6 +25,8 @@ var corsOptions = {
 }
 export default function Home() {
 
+  const [posts, setPosts] = useState([]);
+
   const [cards, setCards] = useState([]);
   const { search } = useLocation();
 
@@ -32,6 +35,11 @@ export default function Home() {
       const res = await axios.get("/cards/" + search, cors(corsOptions));
       setCards(res.data);
     };
+    const fetchPosts = async () => {
+      const res = await axios.get("/posts/" + search, cors(corsOptions));
+      setPosts(res.data);
+    };
+    fetchPosts({category: "chess"});
     fetchCards();
   }, [search]);
   return (
@@ -82,8 +90,8 @@ export default function Home() {
             </div>
           </div>
           <div className="posts">
-            <Postpro />
-            <Postpro />
+          <Postprs postprs={posts}/>
+
 
           </div>
         </div>

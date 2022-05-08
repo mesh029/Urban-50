@@ -71,6 +71,7 @@ router.get("/:id", async (req, res) => {
 router.get("/", async (req, res) => {
   const username = req.query.user;
   const catName = req.query.cat;
+  const catg = req.query.cat2;
   try {
     let posts;
     if (username) {
@@ -81,6 +82,9 @@ router.get("/", async (req, res) => {
           $in: [catName],
         },
       });
+    }else if(catg){
+      posts = await Post.find({category:catg})
+
     } else {
       posts = await Post.find();
     }
