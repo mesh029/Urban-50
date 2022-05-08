@@ -35,6 +35,7 @@ export default function Write() {
   const [cardTitle, setCardTitle] = useState("not ready")
   const [cardDesc, setCardDesc] = useState("")
   const [cardCat, setCardCat] = useState("")
+  const [category, setCategory] = useState("")
 
   var fieldValue = 'hello'
 
@@ -47,6 +48,7 @@ export default function Write() {
       title,
       desc,
       content,
+      category,
     };
     if (file) {
       const data =new FormData();
@@ -131,7 +133,7 @@ return(
           
 
           <textarea
-            placeholder="Tell your story..."
+            placeholder="Give us a short description of your story..."
             type="text"
             className="writeInput writeText"
             onChange={e=>setDesc(e.target.value)}
@@ -139,6 +141,18 @@ return(
           </textarea>
 
         </div>
+        <div className="writeFormGroup">
+          
+
+          <textarea
+            placeholder="Post category:"
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setCategory(e.target.value)}
+          >
+          </textarea>
+        </div>
+        
         <div className="writeFormGroup">
          </div>
         <button className="writeSubmit" type="submit">

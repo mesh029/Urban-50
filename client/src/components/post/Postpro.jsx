@@ -19,7 +19,9 @@ export default function Postpro({ post }) {
   return (
     <div className="postPro">
       <div className="posttitle">
-        <h2>Hello world</h2>
+      <Link to={`/post/${post._id}`} className="link">
+      <h2>{post.title}</h2>
+      </Link>
       </div>
       {/**
        * 
@@ -30,12 +32,12 @@ export default function Postpro({ post }) {
 
       <div className="postDesc">
         <mark-down>
-          Hello world, I am Meshack, this is my blog page, and this time we have the biggest blog in town, we love to do this sshit today we don't need no one to be shown about everything in this world. Because it is the greatest thing on earth.
+          {post.desc}
         </mark-down>
       </div>
 
       <div className="postInfo">
-        Post info..like dates
+      {new Date(post.createdAt).toDateString()}
       </div>
      
       <span className="postAuthor">

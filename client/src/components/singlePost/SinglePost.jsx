@@ -32,6 +32,7 @@ export default function SinglePost() {
 
 
 
+
   var cors = require('cors')
 
 
@@ -66,6 +67,7 @@ export default function SinglePost() {
         username: user.username,
         title,
         desc,
+        content,
       });
       setUpdateMode(false)
     } catch (err) {}
@@ -74,7 +76,7 @@ export default function SinglePost() {
     
   };
 
-  const result = md.render(desc)
+  const result = md.render(content)
 
   function createMarkup() {
     return {__html:  `${result}`};

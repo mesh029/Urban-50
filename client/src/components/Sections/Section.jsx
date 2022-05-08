@@ -29,10 +29,12 @@ export default function Section({ sectionId }) {
         <table className="sectionTbl">
             <tr className="sectionTblRw">
                 <td className="sectionTd1">
-                <i class="c-icon fa-solid fa-chess-knight fa-10x"></i>
+                    <i class="c-icon fa-solid fa-chess-knight fa-10x"></i>
                 </td>
-                <td className="sectionTd2">Hello world</td>
-
+                <td className="sectionTd2">
+                    <div className="title"><h1>{title}</h1></div>
+                    <div className="description">{description}</div>
+                </td>
             </tr>
 
         </table>
