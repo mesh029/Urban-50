@@ -38,7 +38,7 @@ var chess = "chess"
       setPosts(res.data);
     };
     const fetchEvents = async () => {
-      const res = await axios.get(`/events/` + search, cors(corsOptions));
+      const res = await axios.get("/events/" + search, cors(corsOptions));
       setEvents(res.data);
     };
     fetchEvents();
