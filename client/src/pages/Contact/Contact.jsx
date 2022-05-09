@@ -36,7 +36,7 @@ export default function Home() {
         <h4>
              Why should you contact me? I write code for fun, I don't mind contracts though. You can also check out my projects on github. I am a fun boy who is an enthusiast of many things; a professional chess player who also teaches others how to play(ages 9+). I write poems and recomend good animes &#128514;(for free of course). I can also teach how to code in a variety of programming languages.
              </h4>
-        <h4>Im always available so I promise I to get back to you soonest.</h4>
+        <h4>Im always available so I promise to get back to you soonest.</h4>
       </div>
     
 

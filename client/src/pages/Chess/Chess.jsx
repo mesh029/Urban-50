@@ -4,6 +4,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
+import Event from "../../components/Event/Event"
+import Events from "../../components/events/Events"
+
+
 
 import './chess.css'
 import Posts from '../../components/posts/Posts'
@@ -25,6 +29,7 @@ var corsOptions = {
 
 export default function TabExampleBasic(){
   const [posts, setPosts] = useState([]);
+  const [events, setEvents] = useState([]);
   const { search } = useLocation();
 var chess = "chess"
   useEffect(() => {
@@ -32,6 +37,11 @@ var chess = "chess"
       const res = await axios.get(`/posts/?cat2=${"chess"}` + search, cors(corsOptions));
       setPosts(res.data);
     };
+    const fetchEvents = async () => {
+      const res = await axios.get(`/events/` + search, cors(corsOptions));
+      setEvents(res.data);
+    };
+    fetchEvents();
     fetchPosts();
   }, [search]);
 
@@ -52,7 +62,7 @@ var chess = "chess"
         <h3>Region: Kenya</h3>
         <div className="upcomingEventss">
         <h4>Upcoming events...</h4>
-
+        <Events events={events}/>
         </div>
 
 

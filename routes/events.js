@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { eventNames } = require("../models/Event");
 const Event = require("../models/Event");
 
 //CREATE EVENT
@@ -70,11 +71,11 @@ router.get("/:id", async (req, res) => {
 router.get("/", async (req, res) => {
 
   try {
-    let cards;
+    let events;
 
-      cards = await Card.find();
+      events = await Event.find();
 
-      res.status(200).json(cards);
+      res.status(200).json(events);
 
   } catch (err) {
     res.status(500).json(err);
