@@ -4,6 +4,7 @@ import Posts from "../../components/posts/Posts";
 import Cards from "../../components/cards/Cards";
 import Footer from "../../components/footer/footer"
 import Postpro from "../../components/post/Postpro"
+import NavBar from "../../components/topbar/NavBar"
 import Postprs from "../../components/Postpros/Postprs"
 
 import Sidebar from "../../components/sidebar/Sidebar";
@@ -11,6 +12,7 @@ import LeftBar from "../../components/leftbar/Leftbar";
 import "./land.css";
 import axios from "axios";
 import { useLocation } from "react-router";
+
 
 var cors = require('cors')
 

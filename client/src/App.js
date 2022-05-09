@@ -1,6 +1,7 @@
   
 import Home from "./pages/home/Home";
 import TopBar from "./components/topbar/TopBar";
+import NavBar from "./components/topbar/NavBar"
 import LeftBar from "./components/leftbar/Leftbar"
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
@@ -9,6 +10,7 @@ import Chess from "./pages/Chess/Chess"
 import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import Contact from "./pages/Contact/Contact"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "./context/Context";
@@ -18,7 +20,8 @@ function App() {
   const { user } = useContext(Context);
   return (
     <Router>
-      <TopBar />
+      <TopBar/>
+      <NavBar/>
       <Switch>
         <Route exact path="/">
         <Redirect exact from="/" to="/land" />
@@ -31,6 +34,8 @@ function App() {
         <Route path="/land"><Land /></Route>
         <Route path="/home">{user ? <Home /> : <Home />}</Route>
         <Route path="/chess"> <Chess /></Route>
+        <Route path="/contact"> <Contact /></Route>
+
     
 
         

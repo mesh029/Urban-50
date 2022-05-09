@@ -2,14 +2,14 @@ import "./postPro.css";
 import { Link } from "react-router-dom";
 import md from "../../md";
 import TextareaMarkdownEditor from 'react-textarea-markdown-editor';
-import { Remarkable }from 'remarkable'
+import { Remarkable } from 'remarkable'
 import RemarkablePGN from 'remarkable-pgn'
 
 
 const remarkable = new Remarkable()
 
 
-remarkable.use(RemarkablePGN, {/**Options here */})
+remarkable.use(RemarkablePGN, {/**Options here */ })
 
 
 
@@ -19,9 +19,9 @@ export default function Postpro({ post }) {
   return (
     <div className="postPro">
       <div className="posttitle">
-      <Link to={`/post/${post._id}`} className="link">
-      <h2>{post.title}</h2>
-      </Link>
+        <Link to={`/post/${post._id}`} className="link">
+          <h4 className="link postTtl">{post.title}</h4>
+        </Link>
       </div>
       {/**
        * 
@@ -31,19 +31,23 @@ export default function Postpro({ post }) {
 
 
       <div className="postDesc">
-        <mark-down>
-          {post.desc}
-        </mark-down>
+        <Link to={`/post/${post._id}`} className="link">
+          <mark-down>
+            {post.desc}
+          </mark-down>
+
+        </Link>
+
       </div>
 
       <div className="postInfo">
-      {new Date(post.createdAt).toDateString()}
+        {new Date(post.createdAt).toDateString()}
 
       </div>
-     
+
       <span className="postAuthor">
         geekMesh
-        </span>
+      </span>
 
 
     </div>

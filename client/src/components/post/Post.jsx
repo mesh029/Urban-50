@@ -20,7 +20,7 @@ export default function Post({ post }) {
     <div className="post">
       <div className="posttitle">
         <Link to={`/post/${post._id}`} className="link">
-          <span className="postTitle">{post.title}</span>
+          <span className="postTitle link" >{post.title}</span>
         </Link>
       </div>
       {/**

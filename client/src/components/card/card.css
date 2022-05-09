@@ -75,17 +75,11 @@
 }
 
 .c-icon{
-    color: burlywood;
+   color: burlywood;
 }
 
 .cardTitle{
 }
-
-
-
-
-
-
 
 @media only screen and (max-width: 1450px) {
     .flippy{

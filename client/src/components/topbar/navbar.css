@@ -1,0 +1,91 @@
+.navDiv {
+  height: 50px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+  overflow: hidden;
+  z-index: 1;
+  justify-content: center;
+  display: none;
+  background: transparent;
+}
+
+.centerDiv{
+}
+
+a {
+    text-decoration: none;
+  }
+  
+  nav {
+    font-family: monospace;
+  }
+  
+  .navigation > ul {
+    background: d#00b4db;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+  
+  .navigation> ul > li {
+    color: #fff;
+    background: #00b4db;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+  }
+    
+  li a {
+    color: #fff;
+  }
+  
+  .navigation> ul > li:hover,
+  .navigation> ul >li:focus-within {
+    background: yellow;
+    cursor: pointer;
+    font-size: 30px;
+  }
+  
+  li:focus-within a {
+    outline: none;
+  }
+  
+  ul li ul {
+    background: #00b4db;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+  }
+  
+  ul li:hover > ul,
+  ul li:focus-within > ul,
+  ul li ul:hover,
+  ul li ul:focus {
+     visibility: visible;
+     opacity: 1;
+     display: block;
+  }
+  
+  ul li ul li {
+    clear: both;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 700px) {
+      .navDiv{
+          display: flex;
+      }
+
+  }
+  

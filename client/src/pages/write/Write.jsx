@@ -36,6 +36,9 @@ export default function Write() {
   const [cardDesc, setCardDesc] = useState("")
   const [cardCat, setCardCat] = useState("")
   const [category, setCategory] = useState("")
+  const [eventName, setEventName] = useState("")
+  const [eventDesc, setEventDesc] = useState("")
+  const [imgUrl, setImgUrl] = useState("")
 
   var fieldValue = 'hello'
 
@@ -76,6 +79,24 @@ export default function Write() {
     try {
       const res = await axios.post("/cards", newCard);
       window.location.replace("/card/" + res.data._id);
+
+    } catch (err) {
+
+      console.log(err.response.data)
+    }
+
+  };
+
+  const handleSubmitc = async (e) => {
+    e.preventDefault();
+    const newEvent = {
+      eventName,
+      eventDesc,
+      imgUrl,
+    };
+    try {
+      const res = await axios.post("/events", newEvent);
+      window.location.replace("/event/" + res.data._id);
 
     } catch (err) {
 
@@ -194,6 +215,42 @@ return(
         </button>
       </form>
       </div>
+
+      <div className="editor">
+      <form className="writeForm" onSubmit={handleSubmitc}>
+        <div className="writeFormGroup">
+          <input
+            type="text"
+            placeholder="Event Name"
+            className="writeInput"
+            autoFocus={true}
+            onChange={e=>setEventName(e.target.value)}
+          />
+        </div>
+        <div className="writeFormGroup">
+          <textarea
+            placeholder="The chess event's description..."
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setEventDesc(e.target.value)}
+          >
+          </textarea>
+        </div>
+        <div className="writeFormGroup">
+          <textarea
+            placeholder="Enter the url to the chess event flyer image"
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setImgUrl(e.target.value)}
+          >
+          </textarea>
+        </div>
+        <button className="writeSubmit" type="submit">
+          Submitchess
+        </button>
+      </form>
+      </div>
+ 
     </div>
   );
 

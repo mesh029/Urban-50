@@ -35,20 +35,59 @@ var chess = "chess"
     fetchPosts();
   }, [search]);
 
-  const chessEvents = (
+  const chessPosts = (
   
   
-    <div className="chessEvents">
+    <div className="chessPosts">
       <div className="chessPosts">
       <Postprs postprs={posts}/>
       </div>
     </div>
   )
+
+  const chessEvents = (
+    <div className="chessEvents">
+
+      <div className="eventsDescription">
+        <h3>Region: Kenya</h3>
+        <div className="upcomingEventss">
+        <h4>Upcoming events...</h4>
+
+        </div>
+
+
+        <div className="completedEvents">
+          <h4>Completed events...</h4>
+        </div>
+
+        
+      </div>
+    </div>
+  )
+
+
+  const topPlayer = (
+    <div className="topPlayer">
+
+      <div className="playerDescription">
+        <div className="playerProfile">
+
+        </div>
+
+
+        <div className="description">
+        </div>
+
+        
+      </div>
+    </div>
+  )
+
   
   const panes = [
-    { menuItem: 'Posts', render: () => <Tab.Pane>{chessEvents}</Tab.Pane> },
-    { menuItem: 'Events', render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
-    { menuItem: 'Top Player', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
+    { menuItem: 'Posts', render: () => <Tab.Pane>{chessPosts}</Tab.Pane> },
+    { menuItem: 'Events', render: () => <Tab.Pane>{chessEvents}</Tab.Pane> },
+    { menuItem: 'Top Player', render: () => <Tab.Pane>{topPlayer}</Tab.Pane> },
   ]
   
 

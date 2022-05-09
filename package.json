@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@types/react-transition-group": "^4.4.4",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "concurrently": "^7.1.0",

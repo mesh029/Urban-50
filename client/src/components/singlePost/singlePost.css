@@ -1,6 +1,5 @@
 .singlePost {
   flex: 9;
-  margin-left: 180px;
 }
 
 .singlePostWrapper {
@@ -21,7 +20,7 @@
   text-align: center;
   margin: 10px;
   font-family: "Lora", serif;
-  font-size: 28px;
+  font-size: 19px;
 }
 
 .singlePostTitleInput {
@@ -60,14 +59,14 @@
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: 12px;
   font-family: "Varela Round", sans-serif;
   color: #b39656;
 }
 
 .singlePostDesc {
   color: #666;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 25px;
   text-align: justify;
   text-justify: inter-word;

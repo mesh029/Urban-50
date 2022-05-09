@@ -9,11 +9,12 @@
 
 .chessPgDwn{
   height: 50%;
+  top: 1%;
 
 }
 
 .ui.tabular.menu .item{
-  font-size: 10px;
+  font-size: 15px;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -21,9 +22,18 @@
   margin-left: 0;
   margin-right: 0;
   width: 100%;
+  position: sticky;
+  z-index: 1;
+  background-color: white;
 }
 
 .chessPosts{
   width: 100%;
 }
 
+@media only screen and (max-width: 700px) {
+  .ui.attached.tabular.menu {
+  
+  }
+  
+}

@@ -6,6 +6,7 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
+const eventRoute = require("./routes/events")
 const cardRoute = require('./routes/cards')
 const multer = require("multer");
 const path = require("path");
@@ -86,6 +87,7 @@ app.use("/users", userRoute);
 app.use("/posts", postRoute);
 app.use("/categories", categoryRoute);
 app.use("/cards", cardRoute);
+app.use("/events", eventRoute)
 
 
 const NODE_ENV = "production"
