@@ -54,7 +54,7 @@ export default function Event({ event }) {
         }}
         className="frontside"
       >
-        <div className="card">
+        <div className="event">
           <div className="cardContent">
             <div className="cardIcnTitle">
               <div className="cardIcn">{icon}</div>
