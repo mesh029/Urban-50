@@ -3,7 +3,7 @@ const Player = require("../models/Player");
 
 //CREATE PLAYER
 router.post("/", async (req, res) => {
-  const newPlayer = new Post(req.body);
+  const newPlayer = new Player(req.body);
   try {
     const savedPlayer = await newPlayer.save();
     res.status(200).json(savedPlayer);
