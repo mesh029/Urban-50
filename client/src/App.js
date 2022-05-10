@@ -6,7 +6,7 @@ import LeftBar from "./components/leftbar/Leftbar"
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
 import Land from "./pages/LandPage/Land"
-import Chess from "./pages/Chess/Chess"
+import Show from "./pages/Chess/Show"
 import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
@@ -33,7 +33,15 @@ function App() {
         <Route path="/settings">{user ? <Settings /> : <Register />}</Route>
         <Route path="/land"><Land /></Route>
         <Route path="/home">{user ? <Home /> : <Home />}</Route>
-        <Route path="/chess"> <Chess /></Route>
+        <Route path="/show/chess"> <Show routeName={"chess"}/></Route>
+        <Route path="/show/poetry"><Show routeName={"poetry"}/></Route>
+        <Route path="/show/anime"><Show routeName={"anime"}/></Route>
+        <Route path="/show/travel"><Show routeName={"travel"}/></Route>
+        <Route path="/show/basketball"><Show routeName={"basketball"}/></Route>
+
+
+
+
         <Route path="/contact"> <Contact /></Route>
 
     

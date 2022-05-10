@@ -1,0 +1,135 @@
+.chessPg {
+  width: 100%;
+}
+
+.chessPgUp{
+  height: 50%;
+  width: 100%;
+}
+
+.chessPgDwn{
+  height: 50%;
+  top: 1%;
+
+}
+
+.ui.tabular.menu .item{
+  font-size: 15px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.ny{
+  color: red;
+}
+.k{
+  color: green;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+.ui.attached.tabular.menu {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  position: sticky;
+  z-index: 1;
+  background-color: white;
+}
+
+.chessPosts{
+  width: 100%;
+}
+
+
+
+.topPlayer{
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  
+}
+
+.player{
+  display: flex;
+  flex-direction: row;
+}
+.sidePanel{
+  width: 10%;
+}
+.playerProfile{
+  width: 80%;
+  border: 1px solid #d4d4d5;
+  border-radius: 5px;
+
+}
+
+.playerImg{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.playerPic{
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.side{
+  width: 30%;
+}
+
+.centerImg{
+  width: 40%;
+  background-color: yellow;
+  height: 400px;
+  
+}
+
+.playerInfo{
+  font-family: "Josefin Sans", sans-serif;
+
+}
+
+.stats{
+  padding: 20px;
+}
+
+.stats > ul >li{
+  list-style: none;
+  margin-bottom: 4px;
+  
+}
+
+.statsSpan{
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.playerStory{
+  padding: 10px;
+}
+
+.feature{
+  padding: 10px;
+}
+@media only screen and (max-width: 700px) {
+  .ui.attached.tabular.menu {
+  
+  }
+
+  .side{
+    display: none;
+  }
+  .sidePanel{
+    display: none;
+  }
+  .playerProfile{
+    width: 100%;
+  }
+  .centerImg{
+    width: 100%;
+  }
+  
+}

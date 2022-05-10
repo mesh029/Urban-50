@@ -9,38 +9,37 @@
   <!---Medium editor--->
 
   <!-- Font Awesome for awesome icons. You can redefine icons used in a plugin configuration -->
-<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"/>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
 
 
-<!-- font awsome kit -->
-<script src="https://kit.fontawesome.com/99ba5f920f.js" crossorigin="anonymous"></script>
+  <!-- font awsome kit -->
+  <script src="https://kit.fontawesome.com/99ba5f920f.js" crossorigin="anonymous"></script>
 
 
-<!-- JS -->
+  <!-- JS -->
 
-<script>
-var editor = new MediumEditor('.editable');
+  <script>
+    var editor = new MediumEditor('.editable');
 
 
-$(function () {
-    $('.editable').mediumInsert({
+    $(function () {
+      $('.editable').mediumInsert({
         editor: editor
+      });
     });
-});
+  </script>
 
-</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-<script>
-  window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-  function gtag () {
-    dataLayer.push(arguments);
-  }
-
-  gtag('js', new Date());
-  gtag('config', 'UA-148306116-1');
-</script>
+    gtag('js', new Date());
+    gtag('config', 'UA-148306116-1');
+  </script>
 
   <!---Medium editor--->
   <link
@@ -49,6 +48,9 @@ $(function () {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Oswald:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Oswald:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -57,87 +59,88 @@ $(function () {
   <style>
     /*Footer styles**/
     /*Footer styles**/
-    .link, .link:hover{
+    .link,
+    .link:hover {
       text-decoration: none;
       color: inherit;
     }
 
     img[alt=image] {
-       width: 100%; 
-  position: center;
-  height: 300px;
-  object-fit: cover;
-      }
+      width: 100%;
+      position: center;
+      height: 300px;
+      object-fit: cover;
+    }
 
-      iframe[className="iframey"]{
-        width: 100%; 
-  position: center;
-  height: 300px;
-  object-fit: cover;
-  padding: 20px;
-      }
+    iframe[className="iframey"] {
+      width: 100%;
+      position: center;
+      height: 300px;
+      object-fit: cover;
+      padding: 20px;
+    }
 
-      iframe[className="chess"]{
-        position: center;
-        width: 100%;
-        object-fit: cover;
-      }
+    iframe[className="chess"] {
+      position: center;
+      width: 100%;
+      object-fit: cover;
+    }
 
-  
-    ct-pgn-viewer[className="chess"]{
+
+    ct-pgn-viewer[className="chess"] {
       position: center;
       width: 100%;
       object-fit: contain;
       margin: 20px;
-  border-radius: 5px;
-  overflow: hidden;
+      border-radius: 5px;
+      overflow: hidden;
     }
 
-    footer{
+    footer {
       display: block;
       height: 300px;
       background-color: blue;
     }
 
-    footer > a{
+    footer>a {
       color: black;
-        }
+    }
 
-    .footer-rw{
+    .footer-rw {
       max-width: 100%;
     }
 
-    .footer-col{
+    .footer-col {
       width: 20%;
       float: left;
 
     }
+
     @media only screen and (max-width: 700px) {
-      ct-pgn-viewer[className="chess"]{
-      position: center;
-      width: 200%;
-      object-fit: cover;
-      height: 300px;
+      ct-pgn-viewer[className="chess"] {
+        position: center;
+        width: 200%;
+        object-fit: cover;
+        height: 300px;
 
-      
+
+      }
+
+      ct-pgn-viewer .ct-pgn-viewer-move-list-and-controls {
+        width: 400px;
+        position: center;
+      }
     }
-    ct-pgn-viewer .ct-pgn-viewer-move-list-and-controls {
-width: 400px;
-position: center;
-    }
-}
-
-
   </style>
-<!--Chesstempo pgn viewer links etc-->
-<link href="https://c2a.chesstempo.com/pgnviewer/v2.5/pgnviewerext.vers1.css" media="all" rel="stylesheet" crossorigin>
-<script defer language="javascript" src="https://c1a.chesstempo.com/pgnviewer/v2.5/pgnviewerext.bundle.vers1.js" crossorigin></script>
+  <!--Chesstempo pgn viewer links etc-->
+  <link href="https://c2a.chesstempo.com/pgnviewer/v2.5/pgnviewerext.vers1.css" media="all" rel="stylesheet"
+    crossorigin>
+  <script defer language="javascript" src="https://c1a.chesstempo.com/pgnviewer/v2.5/pgnviewerext.bundle.vers1.js"
+    crossorigin></script>
 
-<link
-href="https://c1a.chesstempo.com/fonts/MaterialIcons-Regular.woff2"
-rel="stylesheet" crossorigin>
+  <link href="https://c1a.chesstempo.com/fonts/MaterialIcons-Regular.woff2" rel="stylesheet" crossorigin>
 
-<link href="https://c1a.chesstempo.com/fonts/chessalphanew-webfont.woff" media="all" rel="stylesheet" crossorigin>
+  <link href="https://c1a.chesstempo.com/fonts/chessalphanew-webfont.woff" media="all" rel="stylesheet" crossorigin>
 
   <title>Wubbachess</title>
 </head>
@@ -145,7 +148,7 @@ rel="stylesheet" crossorigin>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script src="https://cdn.jsdelivr.net/npm/markdown-element/dist/markdown-element.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markdown-element/dist/markdown-element.min.js"></script>
 
   <div id="root"></div>
 </body>

@@ -8,6 +8,7 @@ const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const eventRoute = require("./routes/events")
 const cardRoute = require('./routes/cards')
+const playerRoute = require('./routes/players')
 const multer = require("multer");
 const path = require("path");
 const PORT = process.env.PORT || 5000
@@ -88,7 +89,7 @@ app.use("/posts", postRoute);
 app.use("/categories", categoryRoute);
 app.use("/cards", cardRoute);
 app.use("/events", eventRoute)
-
+app.use("/players", playerRoute)
 
 const NODE_ENV = "production"
 

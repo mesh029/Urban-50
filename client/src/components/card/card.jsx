@@ -15,23 +15,28 @@ export default function Card({ card }) {
 
   if (category === 'chess') {
     icon = <i class="c-icon fa-solid fa-chess-knight fa-3x"></i>
-    link = <Link className="link" to="/chess">Chess</Link>
+    link = <Link className="link" to="/show/chess">Chess</Link>
 
 
 
   } else if (category === 'basketball') {
     icon = <i class="c-icon fa-solid fa-basketball fa-3x"></i>
-    link = <Link className="link" to="/write">Basketball</Link>
+    link = <Link className="link" to="/show/basketball">Basketball</Link>
 
 
   } else if (category === 'poetry') {
     icon = <i class="c-icon fa-solid fa-feather fa-3x"></i>
-    link = <Link className="link" to="/home">Poetry</Link>
+    link = <Link className="link" to="/show/poetry">Poetry</Link>
 
 
   } else if (category === 'travel') {
     icon = <i class="c-icon fa-solid fa-bus fa-3x"></i>
-    link = <Link className="link" to="/editor">Chess</Link>
+    link = <Link className="link" to="/show/travel">Travelling</Link>
+
+  }
+  else if (category === 'anime') {
+    icon = <i class="c-icon fa-solid fa-dragon fa-3x"></i>
+    link = <Link className="link" to="/show/anime">Anime</Link>
 
   }
 

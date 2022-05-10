@@ -40,6 +40,21 @@ export default function Write() {
   const [eventDesc, setEventDesc] = useState("")
   const [imgUrl, setImgUrl] = useState("")
 
+  /**Player variables */
+  const [playerName, setPlayerName] = useState("")
+  const [nickName, setNickName] = useState("")
+  const [federation, setFederation] = useState("")
+  const [nationality, setNationality] = useState("")
+  const [fideRating, setFideRating] = useState("")
+  const [peakRating, setPeakRating] = useState("")
+  const [club, setClub] = useState("")
+  const [description, setDescription] = useState("")
+  const [playerImg, setPlayerImg] = useState("")
+
+
+
+
+
   var fieldValue = 'hello'
 
 
@@ -97,6 +112,30 @@ export default function Write() {
     try {
       const res = await axios.post("/events", newEvent);
       window.location.replace("/event/" + res.data._id);
+
+    } catch (err) {
+
+      console.log(err.response.data)
+    }
+
+  };
+
+  const handleSubmitd = async (e) => {
+    e.preventDefault();
+    const newPlayer = {
+      playerName,
+      nickName,
+      federation,
+      nationality,
+      fideRating,
+      peakRating,
+      club,
+      description,
+      playerImg,
+    };
+    try {
+      const res = await axios.post("/players", newPlayer);
+      window.location.replace("/player/" + res.data._id);
 
     } catch (err) {
 
@@ -250,8 +289,99 @@ return(
         </button>
       </form>
       </div>
+
+      <div className="editor">
+      <form className="writeForm" onSubmit={handleSubmitd}>
+        <div className="writeFormGroup">
+          <input
+            type="text"
+            placeholder="Player Name"
+            className="writeInput"
+            autoFocus={true}
+            onChange={e=>setPlayerName(e.target.value)}
+          />
+        </div>
+        <div className="writeFormGroup">
+          <textarea
+            placeholder="Player nick name..."
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setNickName(e.target.value)}
+          >
+          </textarea>
+        </div>
+        <div className="writeFormGroup">
+          <textarea
+            placeholder="Chess Player's federation"
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setFederation(e.target.value)}
+          >
+          </textarea>
+        </div>
+        <div className="writeFormGroup">
+          <textarea
+            placeholder="Chess Player's Nationality"
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setNationality(e.target.value)}
+          >
+          </textarea>
+        </div>
+        <div className="writeFormGroup">
+          <textarea
+            placeholder="Chess Player's fide rating"
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setFideRating(e.target.value)}
+          >
+          </textarea>
+        </div>
+        <div className="writeFormGroup">
+          <textarea
+            placeholder="Chess Player's peak rating"
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setPeakRating(e.target.value)}
+          >
+          </textarea>
+        </div>
+        <div className="writeFormGroup">
+          <textarea
+            placeholder="Chess Player's club"
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setClub(e.target.value)}
+          >
+          </textarea>
+        </div>
+        <div className="writeFormGroup">
+          <textarea
+            placeholder="Chess Player's story aka description"
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setDescription(e.target.value)}
+          >
+          </textarea>
+        </div>
+        <div className="writeFormGroup">
+          <textarea
+            placeholder="Chess Player's image"
+            type="text"
+            className="writeInput writeText"
+            onChange={e=>setPlayerImg(e.target.value)}
+          >
+          </textarea>
+        </div>
+        <button className="writeSubmit" type="submit">
+          SubmitChessPlayer
+        </button>
+      </form>
+      </div>
  
     </div>
+
+    
   );
 
 }
