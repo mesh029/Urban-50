@@ -90,7 +90,7 @@ export default function Event({ event }) {
                         </div>
 
                         <div className="innerDiv">
-                            <h5 className=''>Format: <span className='detail'>{event.format}</span> </h5>
+                            <h5 className=''>Format: <span className='detail'>{event.time}</span> </h5>
                         </div>
 
 
