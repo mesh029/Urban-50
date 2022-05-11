@@ -37,7 +37,7 @@ export default function TopBar() {
               </li>
 
               <li>
-                <NavLink className="link" activeStyle={{ fontWeight: 600, fontSize: '20px' }} to="/chess">
+                <NavLink className="link" activeStyle={{ fontWeight: 600, fontSize: '20px' }} to="/">
                   <a href="#" className="link"><i class="fa-solid fa-building"></i></a>
                 </NavLink>
 
