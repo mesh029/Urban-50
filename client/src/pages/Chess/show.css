@@ -2,31 +2,29 @@
   width: 100%;
 }
 
-.chessPgUp{
+.chessPgUp {
   height: 50%;
   width: 100%;
 }
 
-.chessPgDwn{
+.chessPgDwn {
   height: 50%;
   top: 1%;
-
 }
 
-.ui.tabular.menu .item{
+.ui.tabular.menu .item {
   font-size: 15px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
-.ny{
+.ny {
   color: red;
 }
-.k{
+.k {
   color: green;
   font-size: 20px;
   font-weight: 600;
 }
-
 
 .ui.attached.tabular.menu {
   margin-left: 0;
@@ -37,91 +35,80 @@
   background-color: white;
 }
 
-.chessPosts{
+.chessPosts {
   width: 100%;
 }
 
-
-
-.topPlayer{
+.topPlayer {
   width: 100%;
   height: 100%;
   align-items: center;
-  
 }
 
-.player{
+.player {
   display: flex;
   flex-direction: row;
 }
-.sidePanel{
+.sidePanel {
   width: 10%;
 }
-.playerProfile{
+.playerProfile {
   width: 80%;
   border: 1px solid #d4d4d5;
   border-radius: 5px;
-
 }
 
-.playerImg{
+.playerImg {
   width: 100%;
   display: flex;
   flex-direction: row;
 }
 
-.playerPic{
+.playerPic {
   object-fit: contain;
   height: 100%;
   width: 100%;
   border-top-left-radius: 50px;
-
 }
 
-.side{
+.side {
   width: 30%;
 }
 
-.centerImg{
+.centerImg {
   width: 40%;
   height: 400px;
-  border-radius: 30px;  
+  border-radius: 30px;
   padding: 2px;
-
 }
 
-.playerInfo{
+.playerInfo {
   font-family: "Josefin Sans", sans-serif;
-
 }
 
-.playerProfileTitle{
+.playerProfileTitle {
   font-family: "Josefin Sans", sans-serif;
   padding: 5px;
 }
-.playerProfileTitle::first-letter{
+.playerProfileTitle::first-letter {
   font-weight: 600;
   color: #00b4db;
   font-size: 30px;
 }
-.pPT{
-
+.pPT {
   border-bottom: 1px solid #00b4db;
-
 }
 
-.stats{
+.stats {
   padding: 20px;
 }
 
-.stats > ul >li{
+.stats > ul > li {
   list-style: none;
   margin-bottom: 4px;
-
-  
 }
 
-.statsSpan{
+.statsSpan {
   font-weight: 900;
   font-size: 15px;
   margin-right: 10px;
@@ -129,33 +116,32 @@
   background-color: #00b4db;
   padding: 3px;
   border-radius: 5px;
-
 }
-.statsInfoSpan{
+.statsInfoSpan {
   font-size: 17px;
   font-weight: 600;
 }
 
-.playerStory{
+.playerStory {
   padding: 10px;
+  text-align: justify;
 }
 
-.feature{
+
+.feature {
   padding: 10px;
 }
 @media only screen and (max-width: 700px) {
-
-  .side{
+  .side {
     display: none;
   }
-  .sidePanel{
+  .sidePanel {
     display: none;
   }
-  .playerProfile{
+  .playerProfile {
     width: 100%;
   }
-  .centerImg{
+  .centerImg {
     width: 100%;
   }
-  
 }

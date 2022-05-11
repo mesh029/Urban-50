@@ -68,9 +68,9 @@
   color: #666;
   font-size: 15px;
   line-height: 25px;
+  padding: 5px;
   text-align: justify;
   text-justify: inter-word;
-  padding: 5px;
 }
 
 .singlePostDesc::first-letter {
