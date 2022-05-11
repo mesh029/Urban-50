@@ -15,6 +15,7 @@ import './show.css'
 import Posts from '../../components/posts/Posts'
 import Propost from '../../components/post/Postpro'
 import Postprs from '../../components/Postpros/Postprs'
+import Players from '../../components/players/Players'
 import Header from '../../components/header/Header'
 import Section from '../../components/Sections/Section'
 
@@ -33,6 +34,7 @@ export default function Show({routeName}) {
   const [posts, setPosts] = useState([]);
   const [events, setEvents] = useState([]);
   const [poetryPosts, setPoetryPosts] = useState([])
+  const [players, setPlayers] = useState([])
  /* const [post, setPost] = useState({});*/
 
   const { search } = useLocation();
@@ -49,10 +51,16 @@ export default function Show({routeName}) {
       const res = await axios.get("/events/" + search, cors(corsOptions));
       setEvents(res.data);
     };
+    const fetchPlayers = async () => {
+      const res = await axios.get("/players/" + search, cors(corsOptions));
+      setPlayers(res.data)
+    }
     fetchPoemPosts()
     fetchEvents();
     fetchPosts();
+    fetchPlayers();
   }, [search]);
+
 
 
 /**
@@ -124,6 +132,9 @@ export default function Show({routeName}) {
             </div>
             <div className="feature">
               Contact me to feature as a week's top player &#128293;
+
+              <Players players={players} />
+
             </div>
           </div>
         </div>

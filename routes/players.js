@@ -68,12 +68,12 @@ router.get("/:id", async (req, res) => {
 
 //GET ALL POSTS
 router.get("/", async (req, res) => {
-  const playername = req.query.user;
+  const username = req.query.user;
 
   try {
     let players;
     if (username) {
-      players = await Player.find({ Name: playername });
+        players = await Player.find().limit(1).sort({$natural: -1});
     } else {
       players = await Player.find().limit(1).sort({$natural: -1});
     }
