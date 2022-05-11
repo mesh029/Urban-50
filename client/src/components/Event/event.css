@@ -94,6 +94,7 @@
 }
 .innerDiv{
     margin-bottom: 5px;
+    overflow: hidden;
 }
 
 .detail{

@@ -5,7 +5,13 @@ html, body{
   padding: 0px;
   overflow-x: hidden;
 }
-.write {
+
+.section{
+  background-color: antiquewhite;
+  height: 100%px;
+  margin-bottom: 50px;
+}
+.writeSection {
   padding-top: 50px;
 }
 
@@ -53,7 +59,7 @@ html, body{
 
 .writeText {
   font-size: 20px;
-  height: 100vh;
+  height: auto;
 }
 
 .writeSubmit {

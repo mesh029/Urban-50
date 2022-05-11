@@ -24,7 +24,11 @@ const EventSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
-    participants: {
+    format:{   
+        type: String,
+        required: false,
+    },
+    categories: {
         type: String,
         required: false,
     },
@@ -33,6 +37,18 @@ const EventSchema = new mongoose.Schema({
         required: false,
     },
     sponsors: {
+        type: String,
+        required: false,
+    },
+    registrationLink: {
+        type: String,
+        required: false,
+    },
+    date: {
+        type: String,
+        required: false,
+    },
+    prizes:{
         type: String,
         required: false,
     }

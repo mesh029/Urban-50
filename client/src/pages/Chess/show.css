@@ -74,6 +74,8 @@
   object-fit: contain;
   height: 100%;
   width: 100%;
+  border-top-left-radius: 50px;
+
 }
 
 .side{
@@ -82,9 +84,10 @@
 
 .centerImg{
   width: 40%;
-  background-color: yellow;
   height: 400px;
-  
+  border-radius: 30px;  
+  padding: 2px;
+
 }
 
 .playerInfo{
@@ -99,12 +102,23 @@
 .stats > ul >li{
   list-style: none;
   margin-bottom: 4px;
+
   
 }
 
 .statsSpan{
   font-weight: 900;
   font-size: 15px;
+  margin-right: 10px;
+  color: white;
+  background-color: #00b4db;
+  padding: 3px;
+  border-radius: 5px;
+
+}
+.statsInfoSpan{
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .playerStory{

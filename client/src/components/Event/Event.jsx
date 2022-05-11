@@ -59,7 +59,18 @@ export default function Event({ event }) {
                         <img className='eventImg' src={event.imgUrl} alt="" />
                     </div>
                     <div className="eventDescUp">
-                        {event.eventDesc}
+                        <h3 className='eventTtl'>Description</h3>
+
+                        <div className="innerDiv">
+                            <h5 className=''> {event.eventDesc}</h5>
+                        </div>
+
+
+                        <div className="innerDiv">
+                            <h6 className=''> click anywhere on the card for more details</h6>
+                        </div>
+
+
                     </div>
                 </div>
 
@@ -70,8 +81,6 @@ export default function Event({ event }) {
                 <div className="eventFlyer">
                     <div className="eventContentBack">
                         <h3 className='eventTtl'>{event.eventName}</h3>
-                        <h5 className='eventDesc'>{event.eventDesc}</h5>
-
                         <div className="innerDiv">
                             <h5 className=''>Date: <span className='detail'>21st May</span> </h5>
 
@@ -87,6 +96,12 @@ export default function Event({ event }) {
 
                         <div className="innerDiv">
                             <h5 className=''>Rounds: <span className='detail'>6rounds</span> </h5>
+                        </div>
+
+
+
+                        <div className="innerDiv">
+                            <h5 className=''>Categories: <span className='detail'>U16, u18, U14, U12</span> </h5>
                         </div>
 
 

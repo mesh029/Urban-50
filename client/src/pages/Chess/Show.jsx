@@ -30,12 +30,12 @@ var corsOptions = {
 
 
 
-export default function Show({routeName}) {
+export default function Show({ routeName }) {
   const [posts, setPosts] = useState([]);
   const [events, setEvents] = useState([]);
   const [poetryPosts, setPoetryPosts] = useState([])
   const [players, setPlayers] = useState([])
- /* const [post, setPost] = useState({});*/
+  /* const [post, setPost] = useState({});*/
 
   const { search } = useLocation();
   useEffect(() => {
@@ -63,19 +63,19 @@ export default function Show({routeName}) {
 
 
 
-/**
- * 
- *   const result = md.render(content)
-
-  function createMarkup() {
-    return {__html:  `${result}`};
-  }
- */
+  /**
+   * 
+   *   const result = md.render(content)
+  
+    function createMarkup() {
+      return {__html:  `${result}`};
+    }
+   */
 
   /**
    * objects
    */
-   const chessPosts = (
+  const chessPosts = (
 
 
     <div className="chessPosts">
@@ -105,42 +105,8 @@ export default function Show({routeName}) {
 
 
   const topPlayer = (
-    <div className="topPlayer">
+    <Players players={players} />
 
-      <div className="player">
-        <div className="sidePanel"></div>
-        <div className="playerProfile">
-          <div className="playerImg">
-            <div className="side"></div>
-            <div className="centerImg"><img src="https://dunderid.sirv.com/Images/WhatsApp%20Image%202022-04-11%20at%208.32.20%20PM.jpeg" alt="" className='playerPic' /></div>
-            <div className="side"></div>
-          </div>
-          <div className="playerInfo">
-            <div className="stats">
-              <ul>
-                <li><span className='statsSpan'>Name:</span> </li>
-                <li><span className='statsSpan'>Nick name:</span></li>
-                <li><span className='statsSpan'>Federation:</span></li>
-                <li><span className='statsSpan'>Natiionality:</span></li>
-                <li><span className='statsSpan'>Fide rating:</span></li>
-                <li><span className='statsSpan'>Peak rating:</span></li>
-                <li><span className='statsSpan'>Club:</span></li>
-              </ul>
-            </div>
-            <div className="playerStory">{/**dangerouslySetInnerHTML={createMarkup()} */}
-              
-            </div>
-            <div className="feature">
-              Contact me to feature as a week's top player &#128293;
-
-              <Players players={players} />
-
-            </div>
-          </div>
-        </div>
-        <div className="sidePanel"></div>
-      </div>
-    </div>
   )
 
 
@@ -171,17 +137,17 @@ export default function Show({routeName}) {
     </div>
   )
 
-  const topPoet =(
+  const topPoet = (
     <div className="chessEvents">
 
-    <div className="eventsDescription">
-      <div className="upcomingEventss">
-        <h4>Working progress...please be patient🥺</h4>
-      </div>
-      <div className="completedEvents">
+      <div className="eventsDescription">
+        <div className="upcomingEventss">
+          <h4>Working progress...please be patient🥺</h4>
+        </div>
+        <div className="completedEvents">
+        </div>
       </div>
     </div>
-  </div>
   )
 
 
@@ -194,58 +160,58 @@ export default function Show({routeName}) {
 
   var showName
 
-  
+
   var objectFirstTab
-  var objectSecondTab 
+  var objectSecondTab
   var objectThirdTab
 
 
 
-    if (routeName === "poetry") {
-      firstTabName = "Posts"
-      secondTabName = "Contests"
-      thirdTabName = "Top poet"
+  if (routeName === "poetry") {
+    firstTabName = "Posts"
+    secondTabName = "Contests"
+    thirdTabName = "Top poet"
 
-      objectFirstTab = poemPosts
-      objectSecondTab = poemContests
-      objectThirdTab = topPoet
+    objectFirstTab = poemPosts
+    objectSecondTab = poemContests
+    objectThirdTab = topPoet
 
-      showName = "poetry"
+    showName = "poetry"
 
-    }else if(routeName === "chess"){
-      firstTabName = "Posts"
-      secondTabName = "Events"
-      thirdTabName = "Top player"
+  } else if (routeName === "chess") {
+    firstTabName = "Posts"
+    secondTabName = "Events"
+    thirdTabName = "Top player"
 
-      objectFirstTab = chessPosts
-      objectSecondTab = chessEvents
-      objectThirdTab = topPlayer
+    objectFirstTab = chessPosts
+    objectSecondTab = chessEvents
+    objectThirdTab = topPlayer
 
-      showName = "chess"
+    showName = "chess"
 
-      
-    }else if(routeName === "anime"){
-      firstTabName = "Posts"
-      secondTabName = "Anime fandom"
-      thirdTabName = "Top Anime"
 
-      showName = "anime"
+  } else if (routeName === "anime") {
+    firstTabName = "Posts"
+    secondTabName = "Anime fandom"
+    thirdTabName = "Top Anime"
 
-    }else if(routeName === "basketball"){
-      firstTabName = "Posts"
-      secondTabName = "Events"
-      thirdTabName = "Top player"
+    showName = "anime"
 
-      showName = "basketball"
-    }else if(routeName === "travel"){
-      firstTabName = "Posts"
-      secondTabName = "Road trips"
-      thirdTabName = "Top place"
-    }else{
-      firstTabName = "Posts"
-      secondTabName = "Events"
-      thirdTabName = "Top player"
-    }
+  } else if (routeName === "basketball") {
+    firstTabName = "Posts"
+    secondTabName = "Events"
+    thirdTabName = "Top player"
+
+    showName = "basketball"
+  } else if (routeName === "travel") {
+    firstTabName = "Posts"
+    secondTabName = "Road trips"
+    thirdTabName = "Top place"
+  } else {
+    firstTabName = "Posts"
+    secondTabName = "Events"
+    thirdTabName = "Top player"
+  }
 
 
 

@@ -22,10 +22,10 @@ require('medium-editor/dist/css/medium-editor.css')
 require('medium-editor/dist/css/themes/default.css')
 
 export default function Write() {
-  
 
 
-  const [text, setText]= useState("hello world, coding is no one's joke")
+
+  const [text, setText] = useState("hello world, coding is no one's joke")
 
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -36,9 +36,22 @@ export default function Write() {
   const [cardDesc, setCardDesc] = useState("")
   const [cardCat, setCardCat] = useState("")
   const [category, setCategory] = useState("")
+
+  /**Event variables */
   const [eventName, setEventName] = useState("")
   const [eventDesc, setEventDesc] = useState("")
+  const [venue, setVenue] = useState("")
+  const [time, setTime] = useState("")
+  const [rounds, setRounds] = useState("")
+  const [categories, setCategories] = useState("")
+  const [organisers, setOrganisers] = useState("")
+  const [sponsors, setSponsors] = useState("")
+  const [registrationLink, setRegistrationLink] = useState("")
+  const [date, setDate] = useState("")
   const [imgUrl, setImgUrl] = useState("")
+  const [prizes, setPrizes] = useState("")
+
+
 
   /**Player variables */
   const [playerName, setPlayerName] = useState("")
@@ -58,7 +71,7 @@ export default function Write() {
   var fieldValue = 'hello'
 
 
- 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newPost = {
@@ -69,19 +82,19 @@ export default function Write() {
       category,
     };
     if (file) {
-      const data =new FormData();
+      const data = new FormData();
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
       newPost.photo = filename;
       try {
         await axios.post("/upload", data);
-      } catch (err) {}
+      } catch (err) { }
     }
     try {
       const res = await axios.post("/posts", newPost);
       window.location.replace("/post/" + res.data._id);
-    } catch (err) {}
+    } catch (err) { }
   };
 
   const handleSubmitb = async (e) => {
@@ -108,6 +121,15 @@ export default function Write() {
       eventName,
       eventDesc,
       imgUrl,
+      venue,
+      time,
+      rounds,
+      categories,
+      organisers,
+      sponsors,
+      registrationLink,
+      date,
+      prizes
     };
     try {
       const res = await axios.post("/events", newEvent);
@@ -144,244 +166,343 @@ export default function Write() {
 
   };
 
-return(
-  
-    <div className="write">
-      <div className="hello">
+  return (
 
-      </div>
-      <div className="editor" >
-      </div>
-      {file && (
-        <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
-      )}
-      <form className="writeForm" onSubmit={handleSubmit}>
-        <div className="writeFormGroup">
-          <label htmlFor="fileInput">
-            <i className="writeIcon fas fa-plus"></i>
-          </label>
-          <input
-            type="file"
-            id="fileInput"
-            style={{ display: "none" }}
-            onChange={(e) => setFile(e.target.files[0])}
-
-          />
-          <input
-            type="text"
-            placeholder="Title"
-            className="writeInput"
-            autoFocus={true}
-            onChange={e=>setTitle(e.target.value)}
-          />
+    <>
+    {/**Write post */}
+    <div className="writeSection">
+      <div className="write">
+        <div className="hello">
         </div>
-        <div className="writeFormGroup">
-          
-
-          <textarea
-            placeholder="Tell your story..."
-            type="text"
-            className="writeInput"
-            onChange={e=>setContent(e.target.value)}
-          >
-          </textarea>
-
+        <div className="editor" >
         </div>
+        {file && (
+          <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
+        )}
+        <form className="writeForm" onSubmit={handleSubmit}>
+          <div className="writeFormGroup">
+            <label htmlFor="fileInput">
+              <i className="writeIcon fas fa-plus"></i>
+            </label>
+            <input
+              type="file"
+              id="fileInput"
+              style={{ display: "none" }}
+              onChange={(e) => setFile(e.target.files[0])}
+
+            />
+            <input
+              type="text"
+              placeholder="Title"
+              className="writeInput"
+              autoFocus={true}
+              onChange={e => setTitle(e.target.value)}
+            />
+          </div>
+          <div className="writeFormGroup">
 
 
-        <div className="writeFormGroup">
-          
+            <textarea
+              placeholder="Tell your story..."
+              type="text"
+              className="writeInput writeText"
+              onChange={e => setContent(e.target.value)}
+            >
+            </textarea>
 
-          <textarea
-            placeholder="Give us a short description of your story..."
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setDesc(e.target.value)}
-          >
-          </textarea>
+          </div>
 
-        </div>
-        <div className="writeFormGroup">
-          
 
-          <textarea
-            placeholder="Post category:"
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setCategory(e.target.value)}
-          >
-          </textarea>
-        </div>
-        
-        <div className="writeFormGroup">
-         </div>
-        <button className="writeSubmit" type="submit">
-          Publish
-        </button>
-      </form>
+          <div className="writeFormGroup">
 
-      <div className="editor">
-      <form className="writeForm" onSubmit={handleSubmitb}>
-        <div className="writeFormGroup">
-          <input
-            type="text"
-            placeholder="CardTitle"
-            className="writeInput"
-            autoFocus={true}
-            onChange={e=>setCardTitle(e.target.value)}
-          />
-        </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="Set your card description..."
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setCardDesc(e.target.value)}
-          >
-          </textarea>
-        </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="Set your card category..."
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setCardCat(e.target.value)}
-          >
-          </textarea>
-        </div>
-        <button className="writeSubmit" type="submit">
-          Submitr
-        </button>
-      </form>
-      </div>
 
-      <div className="editor">
-      <form className="writeForm" onSubmit={handleSubmitc}>
-        <div className="writeFormGroup">
-          <input
-            type="text"
-            placeholder="Event Name"
-            className="writeInput"
-            autoFocus={true}
-            onChange={e=>setEventName(e.target.value)}
-          />
+            <textarea
+              placeholder="Give a short description of your story..."
+              type="text"
+              className="writeInput writeText"
+              onChange={e => setDesc(e.target.value)}
+            >
+            </textarea>
+
+          </div>
+          <div className="writeFormGroup">
+
+
+            <textarea
+              placeholder="Post category:"
+              type="text"
+              className="writeInput writeText"
+              onChange={e => setCategory(e.target.value)}
+            >
+            </textarea>
+          </div>
+
+          <div className="writeFormGroup">
+          </div>
+          <button className="writeSubmit" type="submit">
+            Publish post
+          </button>
+        </form>
+
+</div>
+</div>
+      {/**create card */}
+
+      <div className="writeSection">
+        <div className="editor">
+          <form className="writeForm" onSubmit={handleSubmitb}>
+            <div className="writeFormGroup">
+              <input
+                type="text"
+                placeholder="CardTitle"
+                className="writeInput"
+                autoFocus={true}
+                onChange={e => setCardTitle(e.target.value)}
+              />
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Set your card description..."
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setCardDesc(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Set your card category..."
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setCardCat(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <button className="writeSubmit" type="submit">
+              Submit card
+            </button>
+          </form>
         </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="The chess event's description..."
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setEventDesc(e.target.value)}
-          >
-          </textarea>
-        </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="Enter the url to the chess event flyer image"
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setImgUrl(e.target.value)}
-          >
-          </textarea>
-        </div>
-        <button className="writeSubmit" type="submit">
-          Submitchess
-        </button>
-      </form>
       </div>
 
-      <div className="editor">
-      <form className="writeForm" onSubmit={handleSubmitd}>
-        <div className="writeFormGroup">
-          <input
-            type="text"
-            placeholder="Player Name"
-            className="writeInput"
-            autoFocus={true}
-            onChange={e=>setPlayerName(e.target.value)}
-          />
-        </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="Player nick name..."
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setNickName(e.target.value)}
-          >
-          </textarea>
-        </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="Chess Player's federation"
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setFederation(e.target.value)}
-          >
-          </textarea>
-        </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="Chess Player's Nationality"
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setNationality(e.target.value)}
-          >
-          </textarea>
-        </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="Chess Player's fide rating"
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setFideRating(e.target.value)}
-          >
-          </textarea>
-        </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="Chess Player's peak rating"
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setPeakRating(e.target.value)}
-          >
-          </textarea>
-        </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="Chess Player's club"
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setClub(e.target.value)}
-          >
-          </textarea>
-        </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="Chess Player's story aka description"
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setDescription(e.target.value)}
-          >
-          </textarea>
-        </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="Chess Player's image"
-            type="text"
-            className="writeInput writeText"
-            onChange={e=>setPlayerImg(e.target.value)}
-          >
-          </textarea>
-        </div>
-        <button className="writeSubmit" type="submit">
-          SubmitChessPlayer
-        </button>
-      </form>
-      </div>
- 
-    </div>
 
-    
+      {/**Create event */}
+
+      <div className="writeSection">
+        <div className="editor">
+          <form className="writeForm" onSubmit={handleSubmitc}>
+            <div className="writeFormGroup">
+              <input
+                type="text"
+                placeholder="Event Name"
+                className="writeInput"
+                autoFocus={true}
+                onChange={e => setEventName(e.target.value)}
+              />
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="The chess event's description..."
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setEventDesc(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Enter the url to the chess event flyer image"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setImgUrl(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Event venue"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setVenue(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Event start time: ie 8:00 AM"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setTime(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Format: ie 30mins 6rounds"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setRounds(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Categories: ie U18, U12, Open, U50"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setCategories(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Organisers: Name of organisers"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setOrganisers(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Sponsors"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setSponsors(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Registration link: URL to the registration site"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setRegistrationLink(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Date: ie 21st May 2022"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setDate(e.target.value)}
+              >
+              </textarea>
+            </div>
+
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Prizes"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setPrizes(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <button className="writeSubmit" type="submit">
+              Submit Event
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+
+      {/**Create player */}
+
+      <div className="writeSection">
+
+        <div className="editor">
+          <form className="writeForm" onSubmit={handleSubmitd}>
+            <div className="writeFormGroup">
+              <input
+                type="text"
+                placeholder="Player Name"
+                className="writeInput"
+                autoFocus={true}
+                onChange={e => setPlayerName(e.target.value)}
+              />
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Player nick name..."
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setNickName(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Chess Player's federation"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setFederation(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Chess Player's Nationality"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setNationality(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Chess Player's fide rating"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setFideRating(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Chess Player's peak rating"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setPeakRating(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Chess Player's club"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setClub(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Chess Player's story aka description"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setDescription(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <div className="writeFormGroup">
+              <textarea
+                placeholder="Chess Player's image"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setPlayerImg(e.target.value)}
+              >
+              </textarea>
+            </div>
+            <button className="writeSubmit" type="submit">
+              Submit player
+            </button>
+          </form>
+        </div>
+      </div>
+      </>
   );
 
 }

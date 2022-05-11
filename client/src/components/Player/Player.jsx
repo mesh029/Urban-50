@@ -1,6 +1,8 @@
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import './player.css'
 import { Link } from "react-router-dom";
+import md from '../../md'
+
 
 export default function Player({ player }) {
     //const PF = "https://wubbachess.herokuapp.com/images/";
@@ -35,75 +37,46 @@ export default function Player({ player }) {
 
     }
 
+
+     const result = md.render(player.description)
+
+    function createMarkup() {
+      return {__html:  `${result}`};
+    }
+
     return (
-        // .. return
-        <Flippy className="flippy"
-            flipOnHover={false} // default false
-            flipOnClick={true} // default false
-            flipDirection="horizontal" // horizontal or vertical
-        //ref={(r) => this.flippy = r} // to use toggle method like this.flippy.toggle()
-        // if you pass isFlipped prop component will be controlled component.
-        // and other props, which will go to div
-        // style={{ width: '300px', height: '300px', margin: '20px' }} /// these are optional style, it is not necessary
-        >
-            <FrontSide
-                style={{
-                    /* fallback for old browsers */
-                    /*background: '#0090b1'*/
+        <div className="topPlayer">
 
-                }}
-                className="frontside"
-            >
-                <div className="eventContent">
-                    <div className="eventImage">
-                        <img className='eventImg' src={player.playerImg} alt="" />
-                    </div>
-                    <div className="eventDescUp">
-                        {player.nationality}
-                    </div>
-                </div>
-
-            </FrontSide>
-            <BackSide
-                style={{}}>
-
-                <div className="eventFlyer">
-                    <div className="eventContentBack">
-                        <h3 className='eventTtl'>{player.playerName}</h3>
-                        <h5 className='eventDesc'>{player.nickName}</h5>
-
-                        <div className="innerDiv">
-                            <h5 className=''>Date: <span className='detail'>21st May</span> </h5>
-
-                        </div>
-                        <div className="innerDiv">
-                            <h5 className=''>Venue: <span className='detail'>Sarit expo</span> </h5>
-                        </div>
-
-                        <div className="innerDiv">
-                            <h5 className=''>Time control: <span className='detail'>5mins(Blitz)</span> </h5>
-                        </div>
-
-
-                        <div className="innerDiv">
-                            <h5 className=''>Rounds: <span className='detail'>6rounds</span> </h5>
-                        </div>
-
-
-                        <div className="innerDiv">
-                            <a href="" className='link'>
-                                <h5 className='reg'>Registration link </h5>
-                            </a>
-                        </div>
-
-
-                        <br />
-
-
-                    </div>
-                </div>
-
-            </BackSide>
-        </Flippy>
+        <div className="player">
+          <div className="sidePanel"></div>
+          <div className="playerProfile">
+            <div className="playerImg">
+              <div className="side"></div>
+              <div className="centerImg"><img src ={player.playerImg} alt="" className='playerPic' /></div>
+              <div className="side"></div>
+            </div>
+            <div className="playerInfo">
+              <div className="stats">
+                <ul>
+                  <li><span className='statsSpan'>Name:</span> <span className='statsInfoSpan'>{player.playerName}</span></li>
+                  <li><span className='statsSpan'>Nick name:</span><span className='statsInfoSpan'>{player.nickName}</span></li>
+                  <li><span className='statsSpan'>Federation:</span><span className='statsInfoSpan'>{player.federation}</span></li>
+                  <li><span className='statsSpan'>Natiionality:</span><span className='statsInfoSpan'>{player.nationality}</span></li>
+                  <li><span className='statsSpan'>Fide rating:</span><span className='statsInfoSpan'>{player.fideRating}</span></li>
+                  <li><span className='statsSpan'>Peak rating:</span><span className='statsInfoSpan'>{player.peakRating}</span></li>
+                  <li><span className='statsSpan'>Club:</span><span className='statsInfoSpan'>{player.club}</span></li>
+                </ul>
+              </div>
+              <div className="playerStory" dangerouslySetInnerHTML={createMarkup()}>{/**dangerouslySetInnerHTML={createMarkup()} */}
+                
+              </div>
+              <div className="feature">
+                Contact me to feature as a week's top player &#128293;  
+              </div>
+            </div>
+          </div>
+          <div className="sidePanel"></div>
+        </div>
+      </div>
     );
 }
