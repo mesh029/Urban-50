@@ -1,6 +1,8 @@
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import './card.css'
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 
 export default function Card({ card }) {
   //const PF = "https://wubbachess.herokuapp.com/images/";
@@ -64,16 +66,13 @@ export default function Card({ card }) {
             <div className="cardIcnTitle">
               <div className="cardIcn">{icon}</div>
               <div className="cardTitleDiv">
-                <Link to={`/card/${card._id}`} className="link">
+              <NavLink className="link" activeStyle={{ fontWeight: 600, fontSize: '20px' }} to={`show/${category}`}>
                   <h1><span className="cardTitle">{card.cardTitle}</span></h1>
-                </Link>
+                </NavLink>
               </div>
             </div>
             <div className="cardDesc">
             {card.cardDesc}
-            </div>
-            <div className="cardDe">
-              {link}
             </div>
           </div>
         </div>

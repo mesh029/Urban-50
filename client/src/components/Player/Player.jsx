@@ -31,7 +31,7 @@ export default function Player({ player }) {
                                 <li><span className='statsSpan'>Name:</span> <span className='statsInfoSpan'>{player.playerName}</span></li>
                                 <li><span className='statsSpan'>Nick name:</span><span className='statsInfoSpan'>{player.nickName}</span></li>
                                 <li><span className='statsSpan'>Federation:</span><span className='statsInfoSpan'>{player.federation}</span></li>
-                                <li><span className='statsSpan'>Natiionality:</span><span className='statsInfoSpan'>{player.nationality}</span></li>
+                                <li><span className='statsSpan'>Nationality:</span><span className='statsInfoSpan'>{player.nationality}</span></li>
                                 <li><span className='statsSpan'>Fide rating:</span><span className='statsInfoSpan'>{player.fideRating}</span></li>
                                 <li><span className='statsSpan'>Peak rating:</span><span className='statsInfoSpan'>{player.peakRating}</span></li>
                                 <li><span className='statsSpan'>Club:</span><span className='statsInfoSpan'>{player.club}</span></li>
