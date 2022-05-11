@@ -95,6 +95,21 @@
 
 }
 
+.playerProfileTitle{
+  font-family: "Josefin Sans", sans-serif;
+  padding: 5px;
+}
+.playerProfileTitle::first-letter{
+  font-weight: 600;
+  color: #00b4db;
+  font-size: 30px;
+}
+.pPT{
+
+  border-bottom: 1px solid #00b4db;
+
+}
+
 .stats{
   padding: 20px;
 }

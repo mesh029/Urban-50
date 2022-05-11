@@ -76,7 +76,7 @@ export default function Home() {
         <div className="postsAndTab">
           <div className="tab">
             <div className="tabQuote">
-              <h2 className="topQuoteTitle">Week's quote</h2>
+              <h2 className="topQuoteTitle">Top quote</h2>
               <i class="q-icon fa-solid fa-quote-left fa-3x"></i>
               <div className="topQuoteDescDiv">
                 <br />
