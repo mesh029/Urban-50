@@ -82,39 +82,29 @@ export default function Event({ event }) {
                     <div className="eventContentBack">
                         <h3 className='eventTtl'>{event.eventName}</h3>
                         <div className="innerDiv">
-                            <h5 className=''>Date: <span className='detail'>21st May</span> </h5>
+                            <h5 className=''>Date: <span className='detail'>{event.date}</span> </h5>
 
                         </div>
                         <div className="innerDiv">
-                            <h5 className=''>Venue: <span className='detail'>Sarit expo</span> </h5>
+                            <h5 className=''>Venue: <span className='detail'>{event.venue}</span> </h5>
                         </div>
 
                         <div className="innerDiv">
-                            <h5 className=''>Time control: <span className='detail'>5mins(Blitz)</span> </h5>
-                        </div>
-
-
-                        <div className="innerDiv">
-                            <h5 className=''>Rounds: <span className='detail'>6rounds</span> </h5>
+                            <h5 className=''>Format: <span className='detail'>{event.format}</span> </h5>
                         </div>
 
 
 
                         <div className="innerDiv">
-                            <h5 className=''>Categories: <span className='detail'>U16, u18, U14, U12</span> </h5>
+                            <h5 className=''>Categories: <span className='detail'>{event.categories}</span> </h5>
                         </div>
-
 
                         <div className="innerDiv">
                             <a href="" className='link'>
-                                <h5 className='reg'>Registration link </h5>
+                                <h5 className='reg'><a className="link" href={event.registrationLink}>Registration link </a></h5>
                             </a>
                         </div>
-
-
                         <br />
-
-
                     </div>
                 </div>
 
