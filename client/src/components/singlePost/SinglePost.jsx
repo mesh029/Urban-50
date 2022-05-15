@@ -132,8 +132,8 @@ export default function SinglePost() {
           <textarea
           rows={30}
             className="singlePostDescInput"
-            value={desc}
-            onChange={(e) => setDesc(e.target.value)}
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
           />
         ) : (
           <div className="singlePostDesc">
