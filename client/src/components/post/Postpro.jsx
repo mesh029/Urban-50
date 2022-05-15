@@ -46,7 +46,7 @@ export default function Postpro({ post }) {
       </div>
 
       <span className="postAuthor">
-        geekMesh
+        {post.username}
       </span>
 
 
