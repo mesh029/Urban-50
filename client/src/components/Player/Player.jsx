@@ -1,14 +1,13 @@
 import './player.css'
 import { Link } from "react-router-dom";
 import md from '../../md'
-import createDomPurify from 'dompurify'
 import {JSDOM} from 'jsdom'
 import { marked } from 'marked';
 
 
 export default function Player({ player }) {
 
-    //const createDomPurify = require('dompurify')
+    const createDomPurify = require('dompurify')
    // const {JSDOM} = require('jsdom')
     const domPurify = createDomPurify(new JSDOM().window)
     const description = player.description
