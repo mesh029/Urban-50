@@ -1,22 +1,26 @@
 import './player.css'
 import { Link } from "react-router-dom";
 import md from '../../md'
+import createDomPurify from 'dompurify'
+import {JSDOM} from 'jsdom'
+import { marked } from 'marked';
 
 
 export default function Player({ player }) {
 
-    //onst createDomPurify = require('dompurify')
+    //const createDomPurify = require('dompurify')
    // const {JSDOM} = require('jsdom')
-    // domPurify = createDomPurify(new JSDOM().window)
+    const domPurify = createDomPurify(new JSDOM().window)
+    const description = player.description
   
-    const result = md.render(player.description)
-    //const sanitizedResult =  domPurify.sanitize(result)
+    //onst result = md.render(player.description)
+    const sanitizedResult =  domPurify.sanitize(marked(description))
   
   
 
 
     function createMarkup() {
-        return { __html: `${result}` };
+        return { __html: `${sanitizedResult}` };
     }
 
     return (
@@ -36,6 +40,7 @@ export default function Player({ player }) {
                             <ul>
                                 <li><span className='statsSpan'>Name:</span> <span className='statsInfoSpan'>{player.playerName}</span></li>
                                 <li><span className='statsSpan'>Nick name:</span><span className='statsInfoSpan'>{player.nickName}</span></li>
+
                                 <li><span className='statsSpan'>Federation:</span><span className='statsInfoSpan'>{player.federation}</span></li>
                                 <li><span className='statsSpan'>Nationality:</span><span className='statsInfoSpan'>{player.nationality}</span></li>
                                 <li><span className='statsSpan'>Fide rating:</span><span className='statsInfoSpan'>{player.fideRating}</span></li>
