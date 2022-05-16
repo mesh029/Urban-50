@@ -5,12 +5,12 @@ import md from '../../md'
 
 export default function Player({ player }) {
 
-    const createDomPurify = require('dompurify')
-    const {JSDOM} = require('jsdom')
-    const domPurify = createDomPurify(new JSDOM().window)
+    //onst createDomPurify = require('dompurify')
+   // const {JSDOM} = require('jsdom')
+    // domPurify = createDomPurify(new JSDOM().window)
   
     const result = md.render(player.description)
-    const sanitizedResult =  domPurify.sanitize(result)
+    //const sanitizedResult =  domPurify.sanitize(result)
   
   
 
