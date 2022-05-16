@@ -19,7 +19,7 @@ export default function Postpro({ post }) {
   return (
     <div className="postPro">
       <div className="posttitle">
-        <Link to={`/post/${post._id}`} className="link">
+        <Link to={`/post/${post.slug}`} className="link">
           <h4 className="link postTtl">{post.title}</h4>
         </Link>
       </div>
