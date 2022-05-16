@@ -11,15 +11,24 @@ export default function Player({ player }) {
    // const {JSDOM} = require('jsdom')
     const domPurify = createDomPurify(new JSDOM().window)
     const description = player.description
+    var sanitized
   
-    //onst result = md.render(player.description)
-    const sanitizedResult =  domPurify.sanitize(marked(description))
-  
+    const result = md.render(player.description)
+
+    if(result){
+        const sanitizedResult =  domPurify.sanitize(marked(description))
+        sanitized = sanitizedResult
+
+    }else{
+        console.log("object is falsy")
+    }
+
+    
   
 
 
     function createMarkup() {
-        return { __html: `${sanitizedResult}` };
+        return { __html: `${sanitized}` };
     }
 
     return (

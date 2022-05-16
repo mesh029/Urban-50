@@ -77,18 +77,28 @@ export default function SinglePost() {
     
   };
 
+  var sanitized
 
+
+
+  const result = md.render(content)
   const createDomPurify = require('dompurify')
   const {JSDOM} = require('jsdom')
   const domPurify = createDomPurify(new JSDOM().window)
 
-  const result = md.render(content)
-  const sanitizedResult =  domPurify.sanitize(result, {ALLOWED_TAGS: ["iframe"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className']})
+  if(result){
+   const sanitizedResult = domPurify.sanitize(result, {ALLOWED_TAGS: ["iframe"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className']})
+   sanitized = sanitizedResult
+  }else{
+    console.log("Object is falsy!")
+  }
+
+
 
 
 
   function createMarkup() {
-    return {__html:  `${result}`};
+    return {__html:  `${sanitized}`};
   }
 
   return (
