@@ -6,6 +6,7 @@ import { Context } from "../../context/Context";
 import "./singlePost.css";
 import markdownIt from 'markdown-it'
 import md from '../../md'
+import dompurify from 'dompurify'
 
 
 
@@ -81,12 +82,14 @@ export default function SinglePost() {
 
 
   const result = md.render(content)
+  const sanitizedResult = dompurify.sanitize(result, {ALLOWED_TAGS: ["iframe"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className']})
+
+
   /*const createDomPurify = require('dompurify')
   const {JSDOM} = require('jsdom')
   const domPurify = createDomPurify(new JSDOM().window)
 
   if(result){
-   const sanitizedResult = domPurify.sanitize(result, {ALLOWED_TAGS: ["iframe"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className']})
    sanitized = sanitizedResult
   }else{
     console.log("Object is falsy!")
@@ -97,7 +100,7 @@ export default function SinglePost() {
 
 
   function createMarkup() {
-    return {__html:  `${result}`};
+    return {__html:  `${sanitizedResult}`};
   }
 
   return (

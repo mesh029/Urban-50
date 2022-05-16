@@ -65,7 +65,7 @@
 }
 
 .singlePostDesc {
-  color: #666;
+  color: rgba(0,0,0,0.8);
   font-size: 15px;
   line-height: 25px;
   padding: 5px;
