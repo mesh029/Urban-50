@@ -82,7 +82,7 @@ export default function SinglePost() {
 
 
 
-  const result = md.render(content)
+  //const result = md.render(content)
   /*const createDomPurify = require('dompurify')
   const {JSDOM} = require('jsdom')
   const domPurify = createDomPurify(new JSDOM().window)
