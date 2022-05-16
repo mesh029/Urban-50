@@ -15,6 +15,7 @@ import 'draftail/dist/draftail.css'
 const initial = JSON.parse(sessionStorage.getItem("draftail:content"))
 
 
+const slugify = require('slugify')
 
 
 
@@ -80,6 +81,7 @@ export default function Write() {
       desc,
       content,
       category,
+      slug: slugify(title, {lower: true, strict: true})
     };
     if (file) {
       const data = new FormData();
@@ -93,8 +95,8 @@ export default function Write() {
     }
     try {
       const res = await axios.post("/posts", newPost);
-     /* window.location.replace(`/post/${post.slug}`)*/
-      window.location.replace("/post/" + res.data._id);
+     window.location.replace(`/post/${newPost.slug}`)
+      /**window.location.replace("/post/" + res.data._id);**/
     } catch (err) { }
   };
 
