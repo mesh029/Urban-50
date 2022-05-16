@@ -1,8 +1,7 @@
 import './player.css'
 import { Link } from "react-router-dom";
 import md from '../../md'
-import {JSDOM} from 'jsdom'
-import { marked } from 'marked';
+
 
 
 export default function Player({ player }) {
@@ -13,7 +12,7 @@ export default function Player({ player }) {
     const description = player.description
    // var sanitized
   
-    const result = md.render(player.description)
+    const result = md.render(description)
 
    /**  if(result){
         const sanitizedResult =  domPurify.sanitize(marked(description))
