@@ -81,7 +81,8 @@ export default function SinglePost() {
 
 
 
-  const result = md.render(content)
+
+  //const result = md.render(content)
   /*const createDomPurify = require('dompurify')
   const {JSDOM} = require('jsdom')
   const domPurify = createDomPurify(new JSDOM().window)
@@ -98,7 +99,7 @@ export default function SinglePost() {
 
 
   function createMarkup() {
-    return {__html:  `${pcontent}`};
+    return {__html:  `#Hello world`};
   }
 
   return (
