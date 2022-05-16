@@ -16,7 +16,7 @@ export default function Player({ player }) {
 
 
     function createMarkup() {
-        return { __html: `${sanitizedResult}` };
+        return { __html: `${result}` };
     }
 
     return (
