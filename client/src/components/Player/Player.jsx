@@ -7,15 +7,15 @@ import { marked } from 'marked';
 
 export default function Player({ player }) {
 
-    const createDomPurify = require('dompurify')
+    //const createDomPurify = require('dompurify')
    // const {JSDOM} = require('jsdom')
-    const domPurify = createDomPurify(new JSDOM().window)
+    //const domPurify = createDomPurify(new JSDOM().window)
     const description = player.description
-    var sanitized
+   // var sanitized
   
     const result = md.render(player.description)
 
-    if(result){
+   /**  if(result){
         const sanitizedResult =  domPurify.sanitize(marked(description))
         sanitized = sanitizedResult
 
@@ -24,11 +24,11 @@ export default function Player({ player }) {
     }
 
     
-  
+  */
 
 
     function createMarkup() {
-        return { __html: `${sanitized}` };
+        return { __html: `${result}` };
     }
 
     return (
