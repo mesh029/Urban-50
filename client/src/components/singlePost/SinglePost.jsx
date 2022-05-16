@@ -6,7 +6,6 @@ import { Context } from "../../context/Context";
 import "./singlePost.css";
 import markdownIt from 'markdown-it'
 import md from '../../md'
-import {marked} from 'marked'
 
 
 
