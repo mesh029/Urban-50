@@ -61,7 +61,7 @@ PostSchema.pre('validate', function(next){
   }
 
   if(this.content){
-    this.sanitizedHtml= domPurify.sanitize(marked(this.content), {ALLOWED_TAGS: ["iframe"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className']}) 
+    this.sanitizedHtml= domPurify.sanitize(marked(this.content)) 
   }
   next()
 })
