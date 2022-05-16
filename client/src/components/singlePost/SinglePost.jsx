@@ -6,6 +6,7 @@ import { Context } from "../../context/Context";
 import "./singlePost.css";
 import markdownIt from 'markdown-it'
 import md from '../../md'
+import {marked} from 'marked'
 
 
 
@@ -76,10 +77,18 @@ export default function SinglePost() {
     
   };
 
+
+  const createDomPurify = require('dompurify')
+  const {JSDOM} = require('jsdom')
+  const domPurify = createDomPurify(new JSDOM().window)
+
   const result = md.render(content)
+  const sanitizedResult =  domPurify.sanitize(result, {ALLOWED_TAGS: ["iframe"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className']})
+
+
 
   function createMarkup() {
-    return {__html:  `${result}`};
+    return {__html:  `${sanitizedResult}`};
   }
 
   return (
@@ -138,8 +147,7 @@ export default function SinglePost() {
         ) : (
           <div className="singlePostDesc">
 
-            <div className="singlePostDesc" dangerouslySetInnerHTML={createMarkup()}>
-    
+            <div className="singlePostDesc" dangerouslySetInnerHTML={createMarkup()}>    
             </div>
     
             </div>
