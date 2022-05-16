@@ -41,10 +41,6 @@ const PostSchema = new mongoose.Schema(
       unique: true,
 
     },
-    sanitizedHtml: {
-      type: String,
-      required: true
-    }
   },
   { timestamps: true }
 );
