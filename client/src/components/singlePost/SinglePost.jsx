@@ -88,7 +88,7 @@ export default function SinglePost() {
 
 
   function createMarkup() {
-    return {__html:  `${sanitizedResult}`};
+    return {__html:  `${result}`};
   }
 
   return (
