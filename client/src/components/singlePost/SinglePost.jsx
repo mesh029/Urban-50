@@ -21,6 +21,7 @@ export default function SinglePost() {
   const [desc, setDesc] = useState("");
   const [updateMode, setUpdateMode] = useState(false);
   const [content, setContent]  = useState("")
+  const [sanitizedHTML, setSanitizedHtml] = useState("")
 
 
   var MarkdownIt = require('markdown-it')
@@ -48,6 +49,7 @@ export default function SinglePost() {
       setTitle(res.data.title);
       setDesc(res.data.desc);
       setContent(res.data.content)
+      setSanitizedHtml(res.data.sanitizedHTML)
     };
     getPost();
   }, [path]);
@@ -97,7 +99,7 @@ export default function SinglePost() {
 
 
   function createMarkup() {
-    return {__html:  `${result}`};
+    return {__html:  `${sanitizedHTML}`};
   }
 
   return (
