@@ -82,19 +82,13 @@ export default function SinglePost() {
 
 
   const result = md.render(content)
-  const sanitizedResult = dompurify.sanitize(result, {ALLOWED_TAGS: ["iframe"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className']})
+
+  //sanitized
+  const sanitizedResult = dompurify.sanitize(result, {ALLOWED_TAGS: ["iframe", "img"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className']}, {ADD_TAGS: ['img']})
 
 
-  /*const createDomPurify = require('dompurify')
-  const {JSDOM} = require('jsdom')
-  const domPurify = createDomPurify(new JSDOM().window)
 
-  if(result){
-   sanitized = sanitizedResult
-  }else{
-    console.log("Object is falsy!")
-  }
-*/
+
 
 
 
