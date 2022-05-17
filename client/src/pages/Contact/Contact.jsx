@@ -25,6 +25,19 @@ export default function Home() {
     <>
       <Header className="header" />
       <div className="info">
+        <h2>About me(shack):)</h2>
+        <br />
+        <h4>I am a chess enthusiast who enjoys:</h4>
+        <ul>
+          <li>Chess</li>
+          <li>Basketballn</li>
+          <li>Travelling</li>
+          <li>Poetry</li>
+        </ul>
+        <h4> In this blog I seek to bring together the trendiest stuff in regards to what I love, together with some of my friends, to keep you entertained.</h4>
+        <h4>Brace yourself! This is...</h4>
+        <h3>Urban 50!</h3>
+      <br />
         <h2>How to contact me(shack):)</h2>
         <br />
         <h4>You can reach me on various platforms:</h4>

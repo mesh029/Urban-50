@@ -12,8 +12,10 @@ import LeftBar from "../../components/leftbar/Leftbar";
 import "./land.css";
 import axios from "axios";
 import { useLocation } from "react-router";
-
-
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+import SkeletonProduct from "../../components/loadingSkeleton/LoadingSkeleton"
+import SkeletonProductPost from "../../components/loadingSkeleton/LoadingSkeletonPost"
 var cors = require('cors')
 
 var text = "#### I am a chess enthusiast who enjoys:\n \n>*Travelling*\n \n>*Basketballn*\n \n *>Poetry*\n \n##### In this blog I seek to bring together the trendiest stuff in regards to what I love, together with some of my friends, to keep you entertained.\n ##### Brace yourself!\n #### This is... \n## Urban 50!"
@@ -32,45 +34,57 @@ export default function Home() {
   const [cards, setCards] = useState([]);
   const { search } = useLocation();
 
+  /**Implementation of loading screen */
+  const [loader, setLoader] = useState(false)
+  /**Implementation of loading screen */
   useEffect(() => {
-    const fetchCards = async () => {
-      const res = await axios.get("/cards/" + search, cors(corsOptions));
-      setCards(res.data);
-    };
-    const fetchPosts = async () => {
-      const res = await axios.get(`/posts/?page=${"land"}` + search, cors(corsOptions));
-      setPosts(res.data);
-    };
-    fetchPosts({category: "chess"});
-    fetchCards();
+    setLoader(true)
+
+    setTimeout(async () => {
+      setLoader(false)
+      const fetchCards = async () => {
+        const res = await axios.get("/cards/" + search, cors(corsOptions));
+        setCards(res.data);
+      };
+      const fetchPosts = async () => {
+        const res = await axios.get(`/posts/?page=${"land"}` + search, cors(corsOptions));
+        setPosts(res.data);
+      };
+      fetchPosts({ category: "chess" });
+      fetchCards();
+    }, 5000)
+
   }, [search]);
   return (
     <>
-      <Header className="header" />
+      <section>
+        <Header className="header" />
+      </section>
       <div class="land-sec">
         <table className="land_tbl">
           <tr className="land_rw">
             <td className="cntr">
-              <Cards cards={cards} />
+              {!loader ? (
+                <Cards cards={cards} />
+
+              ) : (
+                <div className="skeletons">
+                  {
+                    [1, 2, 3, 4, 5].map(loading => (
+                      <SkeletonProduct />
+
+                    ))
+                  }
+
+                </div>
+
+              )
+              }
             </td>
           </tr>
         </table>
       </div>
-      <div className="info">
-        <h2>About me(shack):)</h2>
-        <br />
-        <h4>I am a chess enthusiast who enjoys:</h4>
-        <ul>
-          <li>Chess</li>
-          <li>Basketballn</li>
-          <li>Travelling</li>
-          <li>Poetry</li>
-        </ul>
-        <h4> In this blog I seek to bring together the trendiest stuff in regards to what I love, together with some of my friends, to keep you entertained.</h4>
-        <h4>Brace yourself! This is...</h4>
-        <h3>Urban 50!</h3>
-      </div>
-      <br />
+      
       <div className="latestPosts">
         <h2 className="latestTitle">Latest on Urban50</h2>
         <div className="postsAndTab">
@@ -92,7 +106,23 @@ export default function Home() {
             </div>
           </div>
           <div className="posts">
-          <Postprs postprs={posts}/>
+          {!loader ? (
+            <Postprs postprs={posts} />
+
+              ) : (
+                <div className="skeletonsPosts">
+                  {
+                    [1, 2, 3].map(loading => (
+                      <SkeletonProductPost />
+
+                    ))
+                  }
+
+
+                </div>
+
+              )
+              }
 
 
           </div>

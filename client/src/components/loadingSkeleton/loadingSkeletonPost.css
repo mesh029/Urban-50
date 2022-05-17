@@ -1,0 +1,136 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.postProSkele {
+  width: 100%;
+  /*argin: 2rem;*/
+  cursor: pointer;
+  height: 190px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 5px 6px #0090b1;
+  -moz-box-shadow: 3px 3px 6px #0090b1;
+}
+
+.postImg {
+  width: 100%;
+  position: center;
+  height: 300px;
+  object-fit: cover;
+}
+
+.postInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.postAuthor {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 12px;
+  font-style: italic;
+}
+.postCat {
+  font-family: "Varela Round", sans-serif;
+  font-size: 11px;
+  color: #be9656;
+  line-height: 20px;
+  margin-top: 15px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.postTitle {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  cursor: pointer;
+  list-style: none;
+  text-align: center;
+  text-justify: newspaper;
+  justify-items: center;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.postTtl{
+  font-size: 22px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.posttitle {
+  height: auto;
+}
+
+.postDate {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #999;
+  margin-top: 15px;
+}
+
+.postDescSkele {
+  font-family: "Varela Round", sans-serif;
+  font-size: 14px;
+  color: #444;
+  line-height: 2px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+@media only screen and (max-width: 1026px) {
+  .post {
+    margin: 0px 5px 40px 180px;
+  }
+  .postTitle {
+    margin-bottom: 20px;
+  }
+  .posttitle {
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .post {
+    width: 100%;
+    margin: 0px 15px 40px 15px;
+    position: center;
+    height: auto;
+  }
+  .postTitle {
+    font-size: 30px;
+    text-align: justify;
+  }
+  .posttitle {
+    height: 5vw;
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  .post {
+    width: 100%;
+  }
+  .postTitle {
+    font-size: 3vh;
+  }
+  .posttitle {
+    height: 5vh;
+  }
+}

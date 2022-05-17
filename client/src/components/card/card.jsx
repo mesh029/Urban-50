@@ -16,28 +16,28 @@ export default function Card({ card }) {
   var link
 
   if (category === 'chess') {
-    icon = <i class="c-icon fa-solid fa-chess-knight fa-3x"></i>
+    icon = <i class="c-iconLand fa-solid fa-chess-knight fa-3x"></i>
     link = <Link className="link" to="/show/chess">Chess</Link>
 
 
 
   } else if (category === 'basketball') {
-    icon = <i class="c-icon fa-solid fa-basketball fa-3x"></i>
+    icon = <i class="c-iconLand fa-solid fa-basketball fa-3x"></i>
     link = <Link className="link" to="/show/basketball">Basketball</Link>
 
 
   } else if (category === 'poetry') {
-    icon = <i class="c-icon fa-solid fa-feather fa-3x"></i>
+    icon = <i class="c-iconLand fa-solid fa-feather fa-3x"></i>
     link = <Link className="link" to="/show/poetry">Poetry</Link>
 
 
   } else if (category === 'travel') {
-    icon = <i class="c-icon fa-solid fa-bus fa-3x"></i>
+    icon = <i class="c-iconLand fa-solid fa-bus fa-3x"></i>
     link = <Link className="link" to="/show/travel">Travelling</Link>
 
   }
   else if (category === 'anime') {
-    icon = <i class="c-icon fa-solid fa-dragon fa-3x"></i>
+    icon = <i class="c-iconLand fa-solid fa-dragon fa-3x"></i>
     link = <Link className="link" to="/show/anime">Anime</Link>
 
   }
@@ -64,7 +64,7 @@ export default function Card({ card }) {
         <div className="card">
           <div className="cardContent">
             <div className="cardIcnTitle">
-              <div className="cardIcn">{icon}</div>
+              <div className="cardIcnLand">{icon}</div>
               <div className="cardTitleDiv">
               <NavLink className="link" activeStyle={{ fontWeight: 600, fontSize: '20px' }} to={`show/${category}`}>
                   <h1><span className="cardTitle">{card.cardTitle}</span></h1>
