@@ -84,7 +84,7 @@ export default function SinglePost() {
   const result = md.render(content)
 
   //sanitized
-  const sanitizedResult = dompurify.sanitize(result, {ALLOWED_TAGS: ["iframe", "img"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className']}, {ADD_TAGS: ['img']})
+  const sanitizedResult = dompurify.sanitize(result, {ALLOWED_TAGS: ["iframe", "img", "p", "b", "h1", "h2", "h3", "h4", "em", "b", "blockquote", "strong", "a" ,"li"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className']}, {ADD_TAGS: []})
 
 
 

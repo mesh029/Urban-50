@@ -1,6 +1,8 @@
 import './player.css'
 import { Link } from "react-router-dom";
 import md from '../../md'
+import dompurify from 'dompurify'
+import marked from 'marked'
 
 
 
@@ -13,6 +15,9 @@ export default function Player({ player }) {
    // var sanitized
   
     const result = md.render(description)
+
+    const sanitizedResult = dompurify.sanitize(result, {ALLOWED_TAGS: ["p", "h1", "h2", "h3", "h4", "h5", "h6", "i", , "p", "em", "b", "blockquote", "strong", "a" ,"li"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className']})
+
 
    /**  if(result){
         const sanitizedResult =  domPurify.sanitize(marked(description))
@@ -27,7 +32,7 @@ export default function Player({ player }) {
 
 
     function createMarkup() {
-        return { __html: `${result}` };
+        return { __html: `${sanitizedResult}` };
     }
 
     return (
@@ -70,3 +75,7 @@ export default function Player({ player }) {
         </div>
     );
 }
+
+
+
+
