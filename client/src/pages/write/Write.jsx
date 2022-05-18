@@ -37,6 +37,9 @@ export default function Write() {
   const [cardDesc, setCardDesc] = useState("")
   const [cardCat, setCardCat] = useState("")
   const [category, setCategory] = useState("")
+  const [shot, setShot] = useState("")
+  const [shotAuthor, setShotAuthor] = useState("")
+
 
   /**Event variables */
   const [eventName, setEventName] = useState("")
@@ -81,7 +84,9 @@ export default function Write() {
       desc,
       content,
       category,
-      slug: slugify(title, {lower: true, strict: true})
+      slug: slugify(title, { lower: true, strict: true }),
+      shot,
+      shotAuthor,
     };
     if (file) {
       const data = new FormData();
@@ -95,7 +100,7 @@ export default function Write() {
     }
     try {
       const res = await axios.post("/posts", newPost);
-     window.location.replace(`/post/${newPost.slug}`)
+      window.location.replace(`/post/${newPost.slug}`)
       /**window.location.replace("/post/" + res.data._id);**/
     } catch (err) { }
   };
@@ -172,83 +177,109 @@ export default function Write() {
   return (
 
     <>
-    {/**Write post */}
-    <div className="writeSection">
-      <div className="write">
-        <div className="hello">
+      {/**Write post */}
+      <div className="writeSection">
+        <div className="write">
+          <div className="hello">
+          </div>
+          <div className="editor" >
+          </div>
+          {file && (
+            <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
+          )}
+          <form className="writeForm" onSubmit={handleSubmit}>
+            <div className="writeFormGroup">
+              <label htmlFor="fileInput">
+                <i className="writeIcon fas fa-plus"></i>
+              </label>
+              <input
+                type="file"
+                id="fileInput"
+                style={{ display: "none" }}
+                onChange={(e) => setFile(e.target.files[0])}
+
+              />
+              <input
+                type="text"
+                placeholder="Title"
+                className="writeInput"
+                autoFocus={true}
+                onChange={e => setTitle(e.target.value)}
+              />
+            </div>
+            <div className="writeFormGroup">
+
+
+              <textarea
+                placeholder="Tell your story..."
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setContent(e.target.value)}
+              >
+              </textarea>
+
+            </div>
+
+
+            <div className="writeFormGroup">
+
+
+              <textarea
+                placeholder="Give a short description of your story..."
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setDesc(e.target.value)}
+              >
+              </textarea>
+
+            </div>
+
+            <div className="writeFormGroup">
+
+
+              <textarea
+                placeholder="Any quote shot?"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setShot(e.target.value)}
+              >
+              </textarea>
+
+              <div className="writeFormGroup">
+
+
+                <textarea
+                  placeholder="Author to the shot"
+                  type="text"
+                  className="writeInput writeText"
+                  onChange={e => setShotAuthor(e.target.value)}
+                >
+                </textarea>
+
+              </div>
+
+            </div>
+            <div className="writeFormGroup">
+
+
+              <textarea
+                placeholder="Post category:"
+                type="text"
+                className="writeInput writeText"
+                onChange={e => setCategory(e.target.value)}
+              >
+              </textarea>
+            </div>
+
+            <div className="writeFormGroup">
+            </div>
+            <button className="writeSubmit" type="submit">
+              Publish post
+            </button>
+          </form>
+
         </div>
-        <div className="editor" >
-        </div>
-        {file && (
-          <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
-        )}
-        <form className="writeForm" onSubmit={handleSubmit}>
-          <div className="writeFormGroup">
-            <label htmlFor="fileInput">
-              <i className="writeIcon fas fa-plus"></i>
-            </label>
-            <input
-              type="file"
-              id="fileInput"
-              style={{ display: "none" }}
-              onChange={(e) => setFile(e.target.files[0])}
-
-            />
-            <input
-              type="text"
-              placeholder="Title"
-              className="writeInput"
-              autoFocus={true}
-              onChange={e => setTitle(e.target.value)}
-            />
-          </div>
-          <div className="writeFormGroup">
-
-
-            <textarea
-              placeholder="Tell your story..."
-              type="text"
-              className="writeInput writeText"
-              onChange={e => setContent(e.target.value)}
-            >
-            </textarea>
-
-          </div>
-
-
-          <div className="writeFormGroup">
-
-
-            <textarea
-              placeholder="Give a short description of your story..."
-              type="text"
-              className="writeInput writeText"
-              onChange={e => setDesc(e.target.value)}
-            >
-            </textarea>
-
-          </div>
-          <div className="writeFormGroup">
-
-
-            <textarea
-              placeholder="Post category:"
-              type="text"
-              className="writeInput writeText"
-              onChange={e => setCategory(e.target.value)}
-            >
-            </textarea>
-          </div>
-
-          <div className="writeFormGroup">
-          </div>
-          <button className="writeSubmit" type="submit">
-            Publish post
-          </button>
-        </form>
-
-</div>
-</div>
+      </div>
       {/**create card */}
 
       <div className="writeSection">
@@ -505,7 +536,7 @@ export default function Write() {
           </form>
         </div>
       </div>
-      </>
+    </>
   );
 
 }

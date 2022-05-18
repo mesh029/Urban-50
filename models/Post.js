@@ -41,6 +41,14 @@ const PostSchema = new mongoose.Schema(
       unique: true,
 
     },
+    shot:{
+      type: String,
+      required: false,
+    },
+    shotAuthor:{
+      type: String,
+      required: false,
+    }
   },
   { timestamps: true }
 );

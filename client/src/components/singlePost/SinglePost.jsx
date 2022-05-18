@@ -22,6 +22,8 @@ export default function SinglePost() {
   const [desc, setDesc] = useState("");
   const [updateMode, setUpdateMode] = useState(false);
   const [content, setContent]  = useState("")
+  const [shot, setShot] = useState("")
+  const [shotAuthor, setShotAuthor] = useState("")
 
 
   var MarkdownIt = require('markdown-it')
@@ -49,6 +51,8 @@ export default function SinglePost() {
       setTitle(res.data.title);
       setDesc(res.data.desc);
       setContent(res.data.content)
+      setShot(res.data.shot)
+      setShotAuthor(res.data.shotAuthor)
     };
     getPost();
   }, [path]);
@@ -100,7 +104,7 @@ export default function SinglePost() {
   return (
     <>
 <div className="singlePost">
-  <LeftSideBar/>
+  <LeftSideBar shot={shot} shotAuthor={shotAuthor}/>
   
       <div className="singlePostWrapper">
         {/**
