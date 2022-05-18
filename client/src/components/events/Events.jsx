@@ -6,7 +6,7 @@ export default function Events({ events }) {
   return (
     <>
     
-<div className="cards">
+<div className="eventsCards">
   {events.map((p) => (
     <Event event={p} />
   ))}

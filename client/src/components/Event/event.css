@@ -28,13 +28,9 @@
 }
 
 
-.flippy{
+.flippyEvents{
     height: 300px;
     margin: 15px;
-    flex: 1 0 30%;   
-    border-left: 1px solid #0090b1;
-    border-bottom: 1px solid #0090b1;
-
 
 }
 .flippy:hover{

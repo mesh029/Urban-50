@@ -37,7 +37,7 @@ export default function Event({ event }) {
 
     return (
         // .. return
-        <Flippy className="flippy"
+        <Flippy className="flippyEvents"
             flipOnHover={false} // default false
             flipOnClick={true} // default false
             flipDirection="horizontal" // horizontal or vertical
@@ -59,7 +59,7 @@ export default function Event({ event }) {
                         <img className='eventImg' src={event.imgUrl} alt="" />
                     </div>
                     <div className="eventDescUp">
-                        <h3 className='eventTtl'>Description</h3>
+                        <h3 className='eventTtl'>{event.eventName}</h3>
 
                         <div className="innerDiv">
                             <h5 className=''> {event.eventDesc}</h5>
