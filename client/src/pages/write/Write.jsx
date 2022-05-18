@@ -245,20 +245,20 @@ export default function Write() {
               >
               </textarea>
 
-              <div className="writeFormGroup">
-
-
-                <textarea
-                  placeholder="Author to the shot"
-                  type="text"
-                  className="writeInput writeText"
-                  onChange={e => setShotAuthor(e.target.value)}
-                >
-                </textarea>
-
-              </div>
 
             </div>
+            <div className="writeFormGroup">
+
+<textarea
+  placeholder="Author to the shot"
+  type="text"
+  className="writeInput writeText"
+  onChange={e => setShotAuthor(e.target.value)}
+>
+</textarea>
+
+</div>
+
             <div className="writeFormGroup">
 
 

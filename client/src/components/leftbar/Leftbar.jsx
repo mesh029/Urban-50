@@ -30,7 +30,7 @@ export default function Sidebar({shot, shotAuthor}) {
         </a>
 
         <div className="bottomSayer">
-           {shotAuthor}
+           ~{shotAuthor}
         </div>
 
 

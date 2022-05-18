@@ -64,7 +64,7 @@ export default function Home() {
         <table className="land_tbl">
           <tr className="land_rw">
             <td className="cntr">
-              {!loader ? ((cards.length > 3 ) ?(
+              {!loader ? ((cards.length >= 1 ) ?(
                 <Cards cards={cards} />
 
               ) : (
