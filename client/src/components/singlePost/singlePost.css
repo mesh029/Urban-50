@@ -104,9 +104,10 @@
   margin-top: 20px;
 }
 
-@media only screen and (max-width: 710px) {
+@media only screen and (max-width: 900px) {
   .singlePostWrapper {
       margin-left: 0px;
 
   }
 }
+
