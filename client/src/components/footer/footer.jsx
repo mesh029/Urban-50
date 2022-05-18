@@ -16,8 +16,8 @@ export default function Footer() {
         <table className="tblFoot">
           <tr className="tTop"></tr>
           <tr className="tCenter">
-            <a href="" className="footerList leftmosta">
-              <h1>Urban50</h1>
+            <a href="" className="link footerList leftmosta">
+              <h1><span className="sHSpan">Urban50</span> </h1>
             </a>
           </tr>
           <tr className="tBottom">
@@ -31,12 +31,11 @@ export default function Footer() {
           <table className="tblFoot">
             <tr className="tTop"></tr>
             <tr className="tCenter2">
-              <a href="" className="footerList leftmosa">
+              <a href="" className="link footerList leftmosa">
                 <h3>Social handles</h3>
                 <ul className="footerList">
-                  <li><a href="" className="footerList">Twitter</a></li>
-                  <li><a href="" className="footerList">Facebook</a></li>
-                  <li><a href="" className="footerList">Instagram</a></li>
+                  <li><a href="https://twitter.com/mesh_geek" className="link footerList"> <span className="sHSpan">Twitter</span> </a></li>
+                  <li><a href="https://www.instagram.com/geekmesh/" className="link footerList"><span className="sHSpan">Instagram</span></a></li>
                 </ul>
               </a>
             </tr>
@@ -47,7 +46,7 @@ export default function Footer() {
           <table className="tblFoot">
             <tr className="tTop"></tr>
             <tr className="tCenterl">
-              <a href="" className="footerList leftmosa">
+              <a href="" className="link footerList leftmosa">
                 <h3>Urban50 cool stat</h3>
               </a>
               <br />
@@ -62,9 +61,9 @@ export default function Footer() {
       <div className="futfooter-div">
         <div className="tCenter3">
           <ul className="futfooterList fut">
-            <li><a href="" className="futfooterList">Twitter</a></li>
-            <li><a href="" className="futfooterList">Facebook</a></li>
-            <li><a href="" className="futfooterList">Instagram</a></li>
+            <li><a href="https://twitter.com/mesh_geek" className="link futfooterList">Twitter</a></li>
+            <li><a href="https://github.com/mesh029" className="link futfooterList">GitHub</a></li>
+            <li><a href="https://www.instagram.com/geekmesh/" className="link futfooterList">Instagram</a></li>
           </ul>
         </div>
       </div>

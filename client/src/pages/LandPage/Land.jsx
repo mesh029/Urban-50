@@ -37,9 +37,9 @@ export default function Home() {
   /**Implementation of loading screen */
   const [loader, setLoader] = useState(false)
   /**Implementation of loading screen */
+
   useEffect(() => {
     setLoader(true)
-
     setTimeout(async () => {
       setLoader(false)
       const fetchCards = async () => {
@@ -52,7 +52,7 @@ export default function Home() {
       };
       fetchPosts({ category: "chess" });
       fetchCards();
-    }, 5000)
+    }, 900)
 
   }, [search]);
   return (
@@ -64,7 +64,7 @@ export default function Home() {
         <table className="land_tbl">
           <tr className="land_rw">
             <td className="cntr">
-              {!loader ? (
+              {!loader ? ((cards.length > 3 ) ?(
                 <Cards cards={cards} />
 
               ) : (
@@ -78,7 +78,16 @@ export default function Home() {
 
                 </div>
 
-              )
+                )):(
+                  <div className="skeletons">
+                  {
+                    [1, 2, 3, 4, 5].map(loading => (
+                      <SkeletonProduct />
+                    ))
+                  }
+
+                </div>
+                )
               }
             </td>
           </tr>
@@ -106,7 +115,7 @@ export default function Home() {
             </div>
           </div>
           <div className="posts">
-          {!loader ? (
+          {!loader ? ( (posts.length>=1)?(
             <Postprs postprs={posts} />
 
               ) : (
@@ -121,10 +130,18 @@ export default function Home() {
 
                 </div>
 
+              )):(
+                <div className="skeletonsPosts">
+                {
+                  [1, 2, 3].map(loading => (
+                    <SkeletonProductPost />
+
+                  ))
+                }
+                </div>
+              
               )
               }
-
-
           </div>
         </div>
 

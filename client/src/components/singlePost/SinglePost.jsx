@@ -7,7 +7,7 @@ import "./singlePost.css";
 import markdownIt from 'markdown-it'
 import md from '../../md'
 import dompurify from 'dompurify'
-
+import LeftSideBar from "../../components/leftbar/Leftbar"
 
 
 export default function SinglePost() {
@@ -84,7 +84,7 @@ export default function SinglePost() {
   const result = md.render(content)
 
   //sanitized
-  const sanitizedResult = dompurify.sanitize(result, {ALLOWED_TAGS: ["iframe", "img", "p", "b", "h1", "h2", "h3", "h4", "em", "b", "blockquote", "strong", "a" ,"li"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className']}, {ADD_TAGS: []})
+  const sanitizedResult = dompurify.sanitize(result, {ALLOWED_TAGS: ["iframe", "img", "p", "b", "h1", "h2", "h3", "h4", "em", "b", "blockquote", "strong", "a" ,"li"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling', 'className', "src"]}, {ADD_TAGS: []})
 
 
 
@@ -98,7 +98,10 @@ export default function SinglePost() {
   }
 
   return (
-    <div className="singlePost">
+    <>
+<div className="singlePost">
+  <LeftSideBar/>
+  
       <div className="singlePostWrapper">
         {/**
          * Anncient stuff I plan to bring back to life sometime soon
@@ -166,12 +169,12 @@ export default function SinglePost() {
 
           
           </>
-        
-
-
           
         )}
       </div>
     </div>
-  );
+
+    
+    </>
+      );
 }

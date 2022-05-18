@@ -90,6 +90,17 @@
   padding: 0;
   list-style: none;
   color: white;
+  padding: 3px;
+}
+
+.footerList:hover{
+  color: white;
+}
+.sHSpan:hover{
+  background-color: #01b2da;
+  padding: 5px;
+  border-radius: 3px;
+
 }
 
 .footer-b>p {

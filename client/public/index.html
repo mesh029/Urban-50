@@ -74,9 +74,8 @@
 }
 
     img[alt=image] {
-      width: 100%;
+      max-width: 100%;
       position: center;
-      height: 300px;
       object-fit: cover;
     }
 
@@ -123,6 +122,18 @@
       float: left;
 
     }
+
+
+@media only screen and (min-width: 710px) {
+  img[alt=image] {
+      position: center;
+      object-fit: cover;
+      margin-left: 25%;
+      max-width: 100%;
+      max-height: 100%;
+      width: 50%;
+    }
+}
 
     @media only screen and (max-width: 700px) {
       ct-pgn-viewer[className="chess"] {
