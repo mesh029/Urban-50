@@ -27,7 +27,7 @@
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
     "build": "cd client && npm run build",
-    "install-client": "cd client && npm install",
+    "install-client": "cd client && npm install --force",
     "heroku-postbuild": "npm run install-client && npm run build",
     "server": "nodemon index.js",
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
